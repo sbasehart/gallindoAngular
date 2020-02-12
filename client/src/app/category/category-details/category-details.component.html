@@ -1,0 +1,28 @@
+<div class="dashboard" id="dashboard">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+      <a mat-flat-button [routerLink]="['/category']">Return</a>
+    </div>
+  </div>
+  <div class="row posting">
+    <div class="col-md-3">
+      <p><b>{{category.catName}}</b></p>
+      <p>Updated: {{category.updated | date}}</p>
+    </div>
+    <div class="col-md-7">
+      <p>Department Description:</p>
+      <small innerHTML={{category.catContent}}></small>
+    </div>
+    <div class="col-md-2">
+      <a class="btn btn-block" [routerLink]="['/category/edit/', category._id]">
+        <mat-icon>edit</mat-icon>
+      </a>
+      <a class="btn btn-block" button (click)="deleteCategory(category.id)">
+        <mat-icon>delete</mat-icon>
+      </a>
+    </div>
+  </div>
+</div>

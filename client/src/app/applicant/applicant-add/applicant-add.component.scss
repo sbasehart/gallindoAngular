@@ -1,0 +1,41 @@
+.form-item {
+    background: #FFF;
+    border: 2px solid #D8E1E4;
+    height: 1%;
+    font-size: 14px;
+    padding: 2%;
+    display:block;
+    color:black;
+    line-height: 1.5;
+    width: 100%;
+}
+
+select{
+    background: #FFF;
+    border: 2px solid #D8E1E4;
+    height: 2% !important;
+    font-size: 14px;
+    padding: 2% !important;
+    display:block;
+    color:black;
+    line-height: 1.5;
+    width: 100%;
+}
+
+.cke_inner {
+    display: none !important;
+}
+
+.mat-flat-button[disabled][disabled] {
+        background-color: red;
+        display: block;
+        color:grey
+    
+}
+
+.mat-flat-button {
+    background-color: red;
+    display: block;
+    color:white
+}
+
