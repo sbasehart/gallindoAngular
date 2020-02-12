@@ -25,9 +25,10 @@ export class PostAddComponent implements OnInit {
   category = '';
   postTitle = '';
   postAuthor = '';
-  postDescription: '';
-  postQualifications = '';
+  postDesc = '';
+  postContent = '';
   postReference = '';
+  postImgUrl = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
   categories: Category[] = [];
@@ -44,9 +45,10 @@ export class PostAddComponent implements OnInit {
       category : [null, Validators.required],
       postTitle : [null, Validators.required],
       postAuthor : [null, Validators.required],
-      postDescription : [null, Validators.required],
-      postQualifications : [null, Validators.required],
+      postDesc : [null, Validators.required],
+      postContent : [null, Validators.required],
       postReference : [null, Validators.required],
+      postImgUrl : [null, Validators.required]
     });
   }
 
@@ -54,9 +56,9 @@ export class PostAddComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addPost(this.postForm.value)
       .subscribe((res: any) => {
-          // const id = res._id;
+          const id = res._id;
           this.isLoadingResults = false;
-          this.router.navigate(['/post/']);
+          this.router.navigate(['/post/details', id]);
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;

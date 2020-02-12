@@ -15,9 +15,11 @@ export class PostDetailsComponent implements OnInit {
     id: '',
     postTitle: '',
     postAuthor: '',
-    postDescription: '',
-    postQualifications: '',
+    postDesc: '',
+    postContent: '',
     postReference: '',
+    postImgUrl: '',
+    created: null,
     updated: null
   };
   isLoadingResults = true;

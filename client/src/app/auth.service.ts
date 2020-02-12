@@ -49,7 +49,7 @@ export class AuthService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      console.log(error);
+      console.error(error); // log to console instead
       this.log(`${operation} failed: ${error.message}`);
 
       return of(result as T);
@@ -60,4 +60,3 @@ export class AuthService {
     console.log(message);
   }
 }
-

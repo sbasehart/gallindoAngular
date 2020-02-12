@@ -1,9 +1,8 @@
 export class Category {
-    id: number;
-    catName: string;
-    catContent: string;
-    updated: Date;
-  }
-
-
-
+  id: number;
+  catName: string;
+  catDesc: string;
+  catImgUrl: string;
+  catContent: string;
+  updated: Date;
+}

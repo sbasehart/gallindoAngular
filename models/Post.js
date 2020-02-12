@@ -5,7 +5,11 @@ var PostSchema = new mongoose.Schema({
   id: String,
   postTitle: String,
   postAuthor: String,
-  embed: String,
+  postDesc: String,
+  postContent: String,
+  postReference: String,
+  postImgUrl: String,
+  created: { type: Date },
   updated: { type: Date, default: Date.now },
 });
 

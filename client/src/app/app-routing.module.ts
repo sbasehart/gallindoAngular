@@ -3,23 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './home/home.component';
-import { BulletinComponent } from './bulletin/bulletin.component';
+import { DetailsComponent } from './details/details.component';
 import { CategoryComponent } from './category/category.component';
-import { PageComponent } from './page/page.component';
-import { PostComponent } from './post/post.component';
 import { ContactComponent } from './contact/contact.component';
-import { ContractorComponent } from './contractor/contractor.component';
+
+import { PostComponent } from './post/post.component';
 import { CategoryDetailsComponent } from './category/category-details/category-details.component';
 import { CategoryAddComponent } from './category/category-add/category-add.component';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
-import { PageDetailsComponent } from './page/page-details/page-details.component';
-import { PageAddComponent } from './page/page-add/page-add.component';
-import { PageEditComponent } from './page/page-edit/page-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostAddComponent } from './post/post-add/post-add.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
-import { ContractorAddComponent } from'./contractor/contractor-add/contractor-add.component';
-import { ContractorDetailsComponent } from'./contractor/contractor-details/contractor-details.component';
+import { BycategoryComponent } from './bycategory/bycategory.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin/admin.component';
 import { ContactAddComponent } from'./contact/contact-add/contact-add.component';
@@ -36,18 +31,23 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    data: { title: ' Home' }
-  },
-  {
-    path: 'bulletin',
-    component: BulletinComponent,
-    data: { title: ' Bulletin' }
+    data: { title: 'Blog Home' }
   },
   {
     path: 'admin',
     canActivate: [AuthGuard],
     component: AdminComponent,
-    data: { title: ' Admin' }
+    data: { title: 'Blog Admin' }
+  },
+  {
+    path: 'bycategory/:id',
+    component: BycategoryComponent,
+    data: { title: 'Post by Category' }
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
+    data: { title: 'Show Post Details' }
   },
   {
     path: 'login',
@@ -106,7 +106,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: PostEditComponent,
     data: { title: 'Post Edit' }
-  },
+  }
   {
     path: 'contact',
     canActivate: [AuthGuard],
@@ -125,46 +125,6 @@ const routes: Routes = [
     data: { title: 'Contact Add' }
   },
   {
-    path: 'contractor',
-    canActivate: [AuthGuard],
-    component: ContractorComponent,
-    data: { title: 'Contractor' }
-  },
-  {
-    path: 'contractor/details/:id',
-    canActivate: [AuthGuard],
-    component: ContractorDetailsComponent,
-    data: { title: 'Contractor Details' }
-  },
-  {
-    path: 'contractor/add',
-    component: ContractorAddComponent,
-    data: { title: 'Contractor Add' }
-  },
-  {
-    path: 'page',
-    canActivate: [AuthGuard],
-    component: PageComponent,
-    data: { title: 'Page' }
-  },
-  {
-    path: 'page/details/:id',
-    component: PageDetailsComponent,
-    data: { title: 'Page Details' }
-  },
-  {
-    path: 'page/add',
-    canActivate: [AuthGuard],
-    component: PageAddComponent,
-    data: { title: 'Page Add' }
-  },
-  {
-    path: 'page/edit/:id',
-    canActivate: [AuthGuard],
-    component: PageEditComponent,
-    data: { title: 'Page Edit' }
-  },
-  {
     path: '**',
     component: NotFoundComponent,
     data: { title: 'Not Found' }
@@ -175,5 +135,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }

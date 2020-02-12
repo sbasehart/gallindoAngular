@@ -7,13 +7,11 @@ var passport = require('passport');
 var auth = require('./routes/auth');
 var category = require('./routes/category');
 var contact = require('./routes/contact');
-var post = require('./routes/post');
-var blog = require('./routes/blog');
-var page = require('./routes/page');
-var cors = require('cors')
-// var mailer = require('./nodemailer');
 
-mongoose.connect('mongodb://localhost/testApp', { 
+var post = require('./routes/post');
+var cors = require('cors')
+
+mongoose.connect('mongodb://localhost/gallindoAngular', { 
     promiseLibrary: require('bluebird'), 
     useNewUrlParser: true, 
     useUnifiedTopology: true,
@@ -35,10 +33,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/auth', auth);
-app.use('/api/page', page);
 app.use('/api/category', category);
 app.use('/api/post', post);
-app.use('/api/blog', blog);
 app.use('/api/contact', contact);
 
 app.use('/api/public', indexRouter);

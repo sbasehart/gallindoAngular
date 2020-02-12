@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
-  HttpResponse,
-  HttpErrorResponse
+    HttpRequest,
+    HttpHandler,
+    HttpEvent,
+    HttpInterceptor,
+    HttpResponse,
+    HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private router: Router) { }
+
+  constructor(private router: Router) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -21,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
     if (token) {
       request = request.clone({
         setHeaders: {
-          'Authorization': token
+          Authorization: token
         }
       });
     }
@@ -51,7 +52,7 @@ export class TokenInterceptor implements HttpInterceptor {
           alert(error.error);
         }
         return throwError(error);
-      })
-    );
+      }));
   }
+
 }
