@@ -1,11 +1,10 @@
 export class Contact {
     id: string;
-    post: string;
-    appName: string;
-    appPhone: string;
-    appEmail: string;
-    appAddress1: string;
-    appAddress2: string;
-    appResume: string;
+    conName: string;
+    conPhone: string;
+    conEmail: string;
+    conAddress1: string;
+    conAddress2: string;
+    conMessage: string;
     updated: Date
   }

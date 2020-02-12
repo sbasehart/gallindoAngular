@@ -106,7 +106,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: PostEditComponent,
     data: { title: 'Post Edit' }
-  }
+  },
   {
     path: 'contact',
     canActivate: [AuthGuard],

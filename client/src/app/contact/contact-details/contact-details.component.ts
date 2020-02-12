@@ -6,7 +6,7 @@ import { PostService } from '../../post.service';
 import { Post } from '../../post/post';
 
 @Component({
-  selector: 'app-contact-details',
+  selector: 'con-contact-details',
   templateUrl: './contact-details.component.html',
   styleUrls: ['./contact-details.component.scss']
 })
@@ -14,13 +14,12 @@ export class ContactDetailsComponent implements OnInit {
 
   contact: Contact = {
     id: null,
-    appPhone: '',
-    appEmail: '',
-    appName: '',
-    appAddress1: '',
-    appAddress2: '',
-    post: '',
-    appResume: '',
+    conPhone: '',
+    conEmail: '',
+    conName: '',
+    conAddress1: '',
+    conAddress2: '',
+    conMessage: '',
     updated: null
   };
   isLoadingResults = true;
@@ -34,11 +33,11 @@ export class ContactDetailsComponent implements OnInit {
 
   getContactDetails(id: any) {
     this.api.getContact(id)
-      .subscribe((app: any) => {
-        var appl = app[0];
-        this.contact = appl;
-        this.contact.id = appl._id;
-        this.post = app[1];
+      .subscribe((con: any) => {
+        var conl = con[0];
+        this.contact = conl;
+        this.contact.id = conl._id;
+        this.post = con[1];
         console.log(this.post, this.contact);
         this.isLoadingResults = false;
       });

@@ -24,16 +24,16 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class ContactAddComponent implements OnInit {
   contactForm: FormGroup;
-  appName = '';
-  appEmail = '';
-  appPhone: '';
-  appAddress1 = '';
-  appAddress2 = '';
-  appResume = '';
+  conName = '';
+  conEmail = '';
+  conPhone: '';
+  conAddress1 = '';
+  conAddress2 = '';
+  conMessage = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
   posts: Post[] = [];
-  public message = "Thank you for applying to OST! You will now be redirected back to the job board..";
+  public message = "Thank you! You will now be redirected back to the home page.";
 
   @ViewChild(ToastContainerDirective, {static: true}) toastContainer: ToastContainerDirective;
 
@@ -46,32 +46,18 @@ export class ContactAddComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.getPosts();
     this.contactForm = this.formBuilder.group({
-      post : [null, Validators.required],
-      appName : [null, Validators.required],
-      appEmail : [null, Validators.required],
-      appPhone : [null, Validators.required],
-      appAddress1 : [null, Validators.required],
-      appAddress2 : [null, Validators.required],
-      appResume : [null, Validators.required],
+      conName : [null, Validators.required],
+      conEmail : [null, Validators.required],
+      conPhone : [null, Validators.required],
+      conAddress1 : [null, Validators.required],
+      conAddress2 : [null, Validators.required],
+      conResume : [null, Validators.required],
     });
   }
 
   public myFunc() {
     alert(this.message);
-  }
-
-  getPosts() {
-    this.postService.getPosts()
-      .subscribe((res: any) => {
-        this.posts = res;
-        console.log(this.posts);
-        this.isLoadingResults = false;
-      }, err => {
-        console.log(err);
-        this.isLoadingResults = false;
-      });
   }
 
   onFormSubmit() {
