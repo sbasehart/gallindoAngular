@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicantService } from '../applicant.service';
-import { Applicant } from './applicant';
+import { ContactService } from '../contact.service';
+import { Contact } from './contact';
 
 
 @Component({
-  selector: 'app-applicant',
-  templateUrl: './applicant.component.html',
-  styleUrls: ['./applicant.component.scss']
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss']
 })
-export class ApplicantComponent implements OnInit {
+export class ContactComponent implements OnInit {
 
   // displayedColumns: string[] = ['appName', 'updated'];
-  data: Applicant[] = [];
+  data: Contact[] = [];
   isLoadingResults = true;
 
-  constructor(private api: ApplicantService) { }
+  constructor(private api: ContactService) { }
 
   ngOnInit() {
-    this.api.getApplicants()
+    this.api.getContacts()
       .subscribe((res: any) => {
         this.data = res;
         console.log(this.data);

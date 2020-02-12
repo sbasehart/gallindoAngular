@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApplicantService } from './../../applicant.service';
-import { Applicant } from '../applicant';
+import { ContactService } from '../../contact.service';
+import { Contact } from '../contact';
 import { PostService } from '../../post.service';
 import { Post } from '../../post/post';
 
 @Component({
-  selector: 'app-applicant-details',
-  templateUrl: './applicant-details.component.html',
-  styleUrls: ['./applicant-details.component.scss']
+  selector: 'app-contact-details',
+  templateUrl: './contact-details.component.html',
+  styleUrls: ['./contact-details.component.scss']
 })
-export class ApplicantDetailsComponent implements OnInit {
+export class ContactDetailsComponent implements OnInit {
 
-  applicant: Applicant = {
+  contact: Contact = {
     id: null,
     appPhone: '',
     appEmail: '',
@@ -26,28 +26,28 @@ export class ApplicantDetailsComponent implements OnInit {
   isLoadingResults = true;
   post: Post = null;
 
-  constructor(private route: ActivatedRoute, private api: ApplicantService, private router: Router, private postApi: PostService) { }
+  constructor(private route: ActivatedRoute, private api: ContactService, private router: Router, private postApi: PostService) { }
 
   ngOnInit() {
-    this.getApplicantDetails(this.route.snapshot.params.id);
+    this.getContactDetails(this.route.snapshot.params.id);
   }
 
-  getApplicantDetails(id: any) {
-    this.api.getApplicant(id)
+  getContactDetails(id: any) {
+    this.api.getContact(id)
       .subscribe((app: any) => {
         var appl = app[0];
-        this.applicant = appl;
-        this.applicant.id = appl._id;
+        this.contact = appl;
+        this.contact.id = appl._id;
         this.post = app[1];
-        console.log(this.post, this.applicant);
+        console.log(this.post, this.contact);
         this.isLoadingResults = false;
       });
   }
 
-  // getApplicantsByPost(id: any) {
+  // getContactsByPost(id: any) {
   //   this.post = [];
-  //   var x = this.applicant.post;
-  //   this.api.getApplicantsByPost(x)
+  //   var x = this.contact.post;
+  //   this.api.getContactsByPost(x)
   //     .subscribe((res: any) => {
   //       this.post = res;
   //       console.log(this.post);
@@ -58,12 +58,12 @@ export class ApplicantDetailsComponent implements OnInit {
   //     });
   // }
 
-  deleteApplicant(id: any) {
+  deleteContact(id: any) {
     this.isLoadingResults = true;
-    this.api.deleteApplicant(id)
+    this.api.deleteContact(id)
       .subscribe(res => {
         this.isLoadingResults = false;
-        this.router.navigate(['/applicant']);
+        this.router.navigate(['/contact']);
       }, (err) => {
         console.log(err);
         this.isLoadingResults = false;
@@ -82,7 +82,7 @@ export class ApplicantDetailsComponent implements OnInit {
   // }
 
   // getPost() {
-  //   var x = this.applicant.post
+  //   var x = this.contact.post
   //   this.postApi.getPost(x)
   //     .subscribe((res: any) => {
   //       this.post = res;

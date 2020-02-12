@@ -11,13 +11,9 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/category.component';
 import { PostComponent } from './post/post.component';
-import { ApplicantComponent } from './applicant/applicant.component'
+import { ContactComponent } from './contact/contact.component'
 import { ContractorComponent } from './contractor/contractor.component'
 import { AdminComponent } from './admin/admin.component';
-import { BlogAddComponent } from './blog/blog-add/blog-add.component';
-import { BlogComponent } from './blog/blog.component';
-import { BlogEditComponent } from './blog/blog-edit/blog-edit.component';
-import { BlogDetailsComponent } from './blog/blog-details/blog-details.component';
 import { BulletinComponent } from './bulletin/bulletin.component'
 import { CategoryDetailsComponent } from './category/category-details/category-details.component';
 import { CategoryAddComponent } from './category/category-add/category-add.component';
@@ -25,8 +21,8 @@ import { CategoryEditComponent } from './category/category-edit/category-edit.co
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostAddComponent } from './post/post-add/post-add.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
-import { ApplicantAddComponent } from './applicant/applicant-add/applicant-add.component';
-import { ApplicantDetailsComponent } from './applicant/applicant-details/applicant-details.component';
+import { ContactAddComponent } from './contact/contact-add/contact-add.component';
+import { ContactDetailsComponent } from './contact/contact-details/contact-details.component';
 import { ContractorAddComponent } from './contractor/contractor-add/contractor-add.component';
 import { ContractorDetailsComponent } from './contractor/contractor-details/contractor-details.component'
 import { PageComponent } from './page/page.component';
@@ -56,7 +52,6 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { MatContenteditableModule } from 'mat-contenteditable';
-import {NgxPrintModule} from 'ngx-print';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
@@ -68,7 +63,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     CategoryComponent,
     PostComponent,
-    ApplicantComponent,
+    ContactComponent,
     ContractorComponent,
     CategoryDetailsComponent,
     CategoryAddComponent,
@@ -77,18 +72,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PostAddComponent,
     PostEditComponent,
     AdminComponent,
-    ApplicantAddComponent,
-    ApplicantDetailsComponent,
+    ContactAddComponent,
+    ContactDetailsComponent,
     ContractorAddComponent,
     ContractorDetailsComponent,
     PageComponent,
     PageEditComponent,
     PageAddComponent,
     PageDetailsComponent,
-    BlogComponent,
-    BlogAddComponent,
-    BlogEditComponent,
-    BlogDetailsComponent,
     BulletinComponent,
     NotFoundComponent
   ],
@@ -115,7 +106,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CKEditorModule,
     MatContenteditableModule,
     AlertModule,
-    NgxPrintModule,
     MatExpansionModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()

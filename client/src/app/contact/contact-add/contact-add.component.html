@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="applicantForm" (ngSubmit)="onFormSubmit()">
+    <form [formGroup]="contactForm" (ngSubmit)="onFormSubmit()">
         <h3 class="text-center">Application for Employment</h3>
         <h4 class="text-center">Join OST Today!</h4>
         <div class="form-group">
@@ -28,11 +28,11 @@
             <textarea class="form-control"  rows="1" placeholder="Address Line 2" formControlName="appAddress2"></textarea>
         </div>
         <div class="form-group">
-            <label for="appResume">Paste Resume Here - Do Not Repeat Above Info </label>
+            <label for="message">Message</label>
             <ckeditor matInput class="form-control"  rows="6" placeholder="Paste your resume here - Do Not Repeat Above Info" formControlName="appResume"></ckeditor>
         </div>
         <p class="text-center">**Must Complete ALL Fields</p>
-        <button class="btn btn-block" type="submit" [disabled]="!applicantForm.valid" mat-flat-button (click)="success('Success!!')">
+        <button class="btn btn-block" type="submit" [disabled]="!contactForm.valid" mat-flat-button (click)="success('Success!!')">
             Submit
         </button>
         <alert></alert>

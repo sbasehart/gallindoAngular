@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApplicantService } from '../../applicant.service';
+import { ContactService } from '../../contact.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Post } from '../../post/post';
@@ -18,12 +18,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-applicant-add',
-  templateUrl: './applicant-add.component.html',
-  styleUrls: ['./applicant-add.component.scss']
+  selector: 'app-contact-add',
+  templateUrl: './contact-add.component.html',
+  styleUrls: ['./contact-add.component.scss']
 })
-export class ApplicantAddComponent implements OnInit {
-  applicantForm: FormGroup;
+export class ContactAddComponent implements OnInit {
+  contactForm: FormGroup;
   appName = '';
   appEmail = '';
   appPhone: '';
@@ -39,7 +39,7 @@ export class ApplicantAddComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private api: ApplicantService,
+    private api: ContactService,
     private postService: PostService,
     private toastr: ToastrService,
     private alertService: AlertService,
@@ -47,7 +47,7 @@ export class ApplicantAddComponent implements OnInit {
 
   ngOnInit() {
     this.getPosts();
-    this.applicantForm = this.formBuilder.group({
+    this.contactForm = this.formBuilder.group({
       post : [null, Validators.required],
       appName : [null, Validators.required],
       appEmail : [null, Validators.required],
@@ -76,7 +76,7 @@ export class ApplicantAddComponent implements OnInit {
 
   onFormSubmit() {
     this.isLoadingResults = true;
-    this.api.addApplicant(this.applicantForm.value)
+    this.api.addContact(this.contactForm.value)
       .subscribe((res: any) => {
           const id = res.id;
           this.isLoadingResults = false;

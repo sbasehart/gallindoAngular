@@ -1,4 +1,4 @@
-export class Applicant {
+export class Contact {
     id: string;
     post: string;
     appName: string;

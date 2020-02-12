@@ -7,8 +7,7 @@ import { BulletinComponent } from './bulletin/bulletin.component';
 import { CategoryComponent } from './category/category.component';
 import { PageComponent } from './page/page.component';
 import { PostComponent } from './post/post.component';
-import { BlogComponent } from './blog/blog.component'
-import { ApplicantComponent } from './applicant/applicant.component';
+import { ContactComponent } from './contact/contact.component';
 import { ContractorComponent } from './contractor/contractor.component';
 import { CategoryDetailsComponent } from './category/category-details/category-details.component';
 import { CategoryAddComponent } from './category/category-add/category-add.component';
@@ -19,15 +18,12 @@ import { PageEditComponent } from './page/page-edit/page-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostAddComponent } from './post/post-add/post-add.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
-import { BlogAddComponent } from './blog/blog-add/blog-add.component';
-import { BlogEditComponent } from './blog/blog-edit/blog-edit.component';
-import { BlogDetailsComponent } from './blog/blog-details/blog-details.component';
 import { ContractorAddComponent } from'./contractor/contractor-add/contractor-add.component';
 import { ContractorDetailsComponent } from'./contractor/contractor-details/contractor-details.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin/admin.component';
-import { ApplicantAddComponent } from'./applicant/applicant-add/applicant-add.component';
-import { ApplicantDetailsComponent } from'./applicant/applicant-details/applicant-details.component';
+import { ContactAddComponent } from'./contact/contact-add/contact-add.component';
+import { ContactDetailsComponent } from'./contact/contact-details/contact-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
@@ -112,21 +108,21 @@ const routes: Routes = [
     data: { title: 'Post Edit' }
   },
   {
-    path: 'applicant',
+    path: 'contact',
     canActivate: [AuthGuard],
-    component: ApplicantComponent,
-    data: { title: 'Applicant' }
+    component: ContactComponent,
+    data: { title: 'Contact' }
   },
   {
-    path: 'applicant/details/:id',
+    path: 'contact/details/:id',
     canActivate: [AuthGuard],
-    component: ApplicantDetailsComponent,
-    data: { title: 'Applicant Details' }
+    component: ContactDetailsComponent,
+    data: { title: 'Contact Details' }
   },
   {
-    path: 'applicant/add',
-    component: ApplicantAddComponent,
-    data: { title: 'Applicant Add' }
+    path: 'contact/add',
+    component: ContactAddComponent,
+    data: { title: 'Contact Add' }
   },
   {
     path: 'contractor',
@@ -167,28 +163,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: PageEditComponent,
     data: { title: 'Page Edit' }
-  },
-  {
-    path: 'blog',
-    component: BlogComponent,
-    data: { title: 'Blog' }
-  },
-  {
-    path: 'blog/details/:id',
-    component: BlogDetailsComponent,
-    data: { title: 'Blog Details' }
-  },
-  {
-    path: 'blog/add',
-    canActivate: [AuthGuard],
-    component: BlogAddComponent,
-    data: { title: 'Blog Add' }
-  },
-  {
-    path: 'blog/edit/:id',
-    canActivate: [AuthGuard],
-    component: BlogEditComponent,
-    data: { title: 'Blog Edit' }
   },
   {
     path: '**',
