@@ -33,12 +33,19 @@ import {
   MatToolbarModule,
   MatSelectModule,
   MatOptionModule,
-  MatGridListModule } from '@angular/material';
+  MatGridListModule, 
+  MatExpansionModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BycategoryComponent } from './bycategory/bycategory.component';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { MatContenteditableModule } from 'mat-contenteditable';
 import { AdminComponent } from './admin/admin.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContactAddComponent } from './contact/contact-add/contact-add.component';
+import { ContactDetailsComponent } from './contact/contact-details/contact-details.component';
+import { NotFoundComponent } from './notFound/not-found.component';
+import { Alert, AlertModule } from './_alert';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -56,7 +63,12 @@ import { AdminComponent } from './admin/admin.component';
     PostAddComponent,
     PostEditComponent,
     BycategoryComponent,
-    AdminComponent
+    AdminComponent,
+    ContactComponent,
+    ContactAddComponent,
+    ContactDetailsComponent,
+    NotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -80,7 +92,11 @@ import { AdminComponent } from './admin/admin.component';
     MatSelectModule,
     MatOptionModule,
     CKEditorModule,
-    MatContenteditableModule
+    MatContenteditableModule,
+    AlertModule,
+    MatExpansionModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {

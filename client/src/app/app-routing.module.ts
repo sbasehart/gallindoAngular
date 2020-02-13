@@ -19,7 +19,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin/admin.component';
 import { ContactAddComponent } from'./contact/contact-add/contact-add.component';
 import { ContactDetailsComponent } from'./contact/contact-details/contact-details.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './notFound/not-found.component';
 
 
 const routes: Routes = [

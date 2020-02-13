@@ -1,7 +1,7 @@
-<a class="menu-toggle rounded" *ngIf="loginStatus === true">
+<!-- <a class="menu-toggle rounded" *ngIf="loginStatus === false">
   <i class="fas fa-bars"></i>
 </a>
-<nav id="sidebar-wrapper">
+<nav id="sidebar-wrapper" *ngIf="loginStatus === false">
   <ul class="sidebar-nav">
     <li class="sidebar-brand">
       <a class="js-scroll-trigger" href="#page-top">Galindo</a>
@@ -22,10 +22,10 @@
       <a class="js-scroll-trigger" href="#contact">Contact</a>
     </li>
     <li class="sidebar-nav-item">
-      <a class="js-scroll-trigger" href="./portfolio/resume.html">Résumé</a>
+      <a class="js-scroll-trigger" [routerLink]="">Résumé</a>
     </li>
   </ul>
-</nav>
+</nav> -->
 <router-outlet></router-outlet>
 <br>
 <footer class="footer text-center">
@@ -36,14 +36,14 @@
         </li> -->
       <li class="list-inline-item">
         <a href="https://www.instagram.com/gabbygalindohair/" target="_blank">
-          <img class="social-link rounded-circle text-white" src="./img/instagram.png"></a>
+          <img class="social-link rounded-circle text-white" src="../../assets/img/instagram.png"></a>
       </li>
       <li class="list-inline-item">
         <a href="https://www.imdb.com/name/nm8321358/" target="_blank"><img
-            class="social-link rounded-circle text-white" src="./img/imdb.png" style="position: inline;"></a>
+            class="social-link rounded-circle text-white" src="../../assets/img/imdb.png" style="position: inline;"></a>
       </li>
     </ul>
-    <p class="text-muted small mb-0">Copyright &copy; GabbyGalindo 2019</p>
+    <p class="text-muted small mb-0">Copyright &copy; GabbyGalindo 2020</p>
   </div>
 </footer>
 
