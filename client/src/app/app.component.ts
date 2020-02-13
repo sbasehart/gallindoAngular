@@ -33,6 +33,15 @@ export class AppComponent implements OnInit {
         console.log(err);
       });
   }
+  
+  myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
 
   logout() {
     this.authService.logout()

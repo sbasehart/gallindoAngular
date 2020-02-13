@@ -9,7 +9,6 @@ import { Post } from './post';
 })
 export class PostComponent implements OnInit {
 
-  displayedColumns: string[] = ['postTitle', 'postDesc'];
   data: Post[] = [];
   isLoadingResults = true;
 

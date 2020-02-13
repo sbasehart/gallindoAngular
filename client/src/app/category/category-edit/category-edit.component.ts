@@ -22,8 +22,6 @@ export class CategoryEditComponent implements OnInit {
   categoryForm: FormGroup;
   id = '';
   catName = '';
-  catDesc = '';
-  catImgUrl = '';
   catContent = '';
   updated: Date = null;
   isLoadingResults = false;
@@ -34,10 +32,8 @@ export class CategoryEditComponent implements OnInit {
   ngOnInit() {
     this.getCategory(this.route.snapshot.params.id);
     this.categoryForm = this.formBuilder.group({
-      catName : [null, Validators.required],
-      catDesc : [null, Validators.required],
-      catImgUrl : [null, Validators.required],
-      catContent : [null, Validators.required]
+      catName: [null, Validators.required],
+      catContent: [null, Validators.required]
     });
   }
 
@@ -46,8 +42,6 @@ export class CategoryEditComponent implements OnInit {
       this.id = data._id;
       this.categoryForm.setValue({
         catName: data.catName,
-        catDesc: data.catDesc,
-        catImgUrl: data.catImgUrl,
         catContent: data.catContent
       });
     });
@@ -57,9 +51,8 @@ export class CategoryEditComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.updateCategory(this.id, this.categoryForm.value)
       .subscribe((res: any) => {
-          const id = res._id;
           this.isLoadingResults = false;
-          this.router.navigate(['/category/details', id]);
+          this.router.navigate(['/category/']);
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;
@@ -68,7 +61,7 @@ export class CategoryEditComponent implements OnInit {
   }
 
   categoryDetails() {
-    this.router.navigate(['/category/details', this.id]);
+    this.router.navigate(['/category-details/', this.id]);
   }
 
 }

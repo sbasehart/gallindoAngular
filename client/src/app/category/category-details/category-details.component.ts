@@ -10,7 +10,7 @@ import { Category } from '../category';
 })
 export class CategoryDetailsComponent implements OnInit {
 
-  category: Category = { id: null, catName: '', catDesc: '', catImgUrl: '', catContent: '', updated: null };
+  category: Category = { id: null, catName: '', catContent: '', updated: null };
   isLoadingResults = true;
 
   constructor(private route: ActivatedRoute, private api: CategoryService, private router: Router) { }
@@ -23,7 +23,6 @@ export class CategoryDetailsComponent implements OnInit {
     this.api.getCategory(id)
       .subscribe((data: any) => {
         this.category = data;
-        this.category.id = data._id;
         console.log(this.category);
         this.isLoadingResults = false;
       });
@@ -33,13 +32,12 @@ export class CategoryDetailsComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.deleteCategory(id)
       .subscribe(res => {
-          this.isLoadingResults = false;
-          this.router.navigate(['/category']);
-        }, (err) => {
-          console.log(err);
-          this.isLoadingResults = false;
-        }
+        this.isLoadingResults = false;
+        this.router.navigate(['/category']);
+      }, (err) => {
+        console.log(err);
+        this.isLoadingResults = false;
+      }
       );
   }
-
 }

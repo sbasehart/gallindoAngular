@@ -22,18 +22,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class PostEditComponent implements OnInit {
 
   postForm: FormGroup;
-  category = '';
   id = '';
+  category = '';
   postTitle = '';
-  postAuthor = '';
+  postClient = '';
   postDesc = '';
-  postContent = '';
-  postReference = '';
-  postImgUrl = '';
-  updated: Date = null;
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
   categories: Category[] = [];
+
 
   constructor(
     private router: Router,
@@ -46,13 +43,10 @@ export class PostEditComponent implements OnInit {
     this.getCategories();
     this.getPost(this.route.snapshot.params.id);
     this.postForm = this.formBuilder.group({
-      category : [null, Validators.required],
       postTitle : [null, Validators.required],
-      postAuthor : [null, Validators.required],
+      category : [null, Validators.required],
+      postClient : [null, Validators.required],
       postDesc : [null, Validators.required],
-      postContent : [null, Validators.required],
-      postReference : [null, Validators.required],
-      postImgUrl : [null, Validators.required]
     });
   }
 
@@ -60,13 +54,10 @@ export class PostEditComponent implements OnInit {
     this.api.getPost(id).subscribe((data: any) => {
       this.id = data._id;
       this.postForm.setValue({
-        category: data.category,
         postTitle: data.postTitle,
-        postAuthor: data.postAuthor,
+        category: data.category,
+        postClient: data.postClient,
         postDesc: data.postDesc,
-        postContent: data.postContent,
-        postReference: data.postReference,
-        postImgUrl: data.postImgUrl
       });
     });
   }
@@ -87,18 +78,14 @@ export class PostEditComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.updatePost(this.id, this.postForm.value)
       .subscribe((res: any) => {
-          const id = res._id;
+          // const id = res.id;
           this.isLoadingResults = false;
-          this.router.navigate(['/post/details', id]);
+          this.router.navigate(['/post/']);
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;
         }
       );
-  }
-
-  postDetails() {
-    this.router.navigate(['/post/details', this.id]);
   }
 
 }

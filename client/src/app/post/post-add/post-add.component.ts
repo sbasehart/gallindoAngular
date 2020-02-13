@@ -24,11 +24,8 @@ export class PostAddComponent implements OnInit {
   postForm: FormGroup;
   category = '';
   postTitle = '';
-  postAuthor = '';
+  postClient = '';
   postDesc = '';
-  postContent = '';
-  postReference = '';
-  postImgUrl = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
   categories: Category[] = [];
@@ -44,11 +41,8 @@ export class PostAddComponent implements OnInit {
     this.postForm = this.formBuilder.group({
       category : [null, Validators.required],
       postTitle : [null, Validators.required],
-      postAuthor : [null, Validators.required],
+      postClient : [null, Validators.required],
       postDesc : [null, Validators.required],
-      postContent : [null, Validators.required],
-      postReference : [null, Validators.required],
-      postImgUrl : [null, Validators.required]
     });
   }
 
@@ -56,9 +50,9 @@ export class PostAddComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addPost(this.postForm.value)
       .subscribe((res: any) => {
-          const id = res._id;
+          // const id = res._id;
           this.isLoadingResults = false;
-          this.router.navigate(['/post/details', id]);
+          this.router.navigate(['/post/']);
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;

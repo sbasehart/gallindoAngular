@@ -14,12 +14,8 @@ export class DetailsComponent implements OnInit {
     category: '',
     id: '',
     postTitle: '',
-    postAuthor: '',
+    postClient: '',
     postDesc: '',
-    postContent: '',
-    postReference: '',
-    postImgUrl: '',
-    created: null,
     updated: null
   };
   isLoadingResults = true;
