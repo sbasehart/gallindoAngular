@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" id="form">
   <div class="row">
     <div class="example-loading-shade" *ngIf="isLoadingResults">
       <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
-    <mat-card class="example-card">
+    <div class="col-md-12 login">
       <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
         <mat-form-field class="example-full-width">
           <input matInput type="email" placeholder="Email" formControlName="username" [errorStateMatcher]="matcher">
@@ -27,6 +27,6 @@
           <button type="button" mat-flat-button color="primary" (click)="register()">Register</button>
         </div>
       </form>
-    </mat-card>
+    </div>
   </div>
 </div>

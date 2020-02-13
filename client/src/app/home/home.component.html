@@ -39,7 +39,7 @@
     <div class="row">
       <div class="col-lg-10 mx-auto">
         <h2>Gabriella Galindo</h2>
-        <p class="lead mb-5">
+        <p class="lead mb-2">
           <p> Gabriella “Gabby” Galindo is a multi-faceted hairstylist servicing all of the greater Los Angeles area.
             With over a decade of experience in the entertainment industry, Gabby has lent her talents to the editorial,
             film, television, advertising, and personal clientele markets. Securing her California Cosmetology License
@@ -159,7 +159,7 @@
     <div class="row no-gutters">
 
       <div class="col-lg-6" *ngFor="let cat of categories">
-        <a class="portfolio-item" [routerLink]="['/bycategory/, cat._id']">
+        <a class="portfolio-item" [routerLink]="['/bycategory/', cat._id]">
           <span class="caption">
             <span class="caption-content">
               <h2>{{cat.catName}}</h2>
