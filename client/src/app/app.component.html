@@ -1,28 +1,28 @@
-<a class="menu-toggle rounded" *ngIf="loginStatus === false">
+<a class="menu-toggle rounded">
   <i class="fas fa-bars"></i>
 </a>
-<nav id="sidebar-wrapper" *ngIf="loginStatus === false">
+<nav id="sidebar-wrapper">
   <ul class="sidebar-nav">
     <li class="sidebar-brand">
-      <a class="js-scroll-trigger" href="#page-top">Galindo</a>
+      <a class="js-scroll-trigger" pageScroll href="#page-top">Galindo</a>
     </li>
     <li class="sidebar-nav-item">
-      <a class="js-scroll-trigger" href="#page-top">Home</a>
+      <a class="js-scroll-trigger" pageScroll href="#page-top">Home</a>
     </li>
     <li class="sidebar-nav-item">
-      <a class="js-scroll-trigger" href="#about">About</a>
+      <a class="js-scroll-trigger" pageScroll href="#about">About</a>
     </li>
     <li class="sidebar-nav-item">
-      <a class="js-scroll-trigger" href="#services">Gallery</a>
+      <a class="js-scroll-trigger" pageScroll href="#services">Gallery</a>
     </li>
     <li class="sidebar-nav-item">
-      <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+      <a class="js-scroll-trigger" pageScroll href="#portfolio">Portfolio</a>
     </li>
     <li class="sidebar-nav-item">
-      <a class="js-scroll-trigger" href="#contact">Contact</a>
+      <a class="js-scroll-trigger" pageScroll href="#contact">Contact</a>
     </li>
     <li class="sidebar-nav-item">
-      <a class="js-scroll-trigger" [routerLink]="">Résumé</a>
+      <a class="js-scroll-trigger" [routerLink]="['/resume']">Résumé</a>
     </li>
   </ul>
 </nav>
@@ -58,6 +58,6 @@
 </footer>
 
 <!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-  <i class="fas fa-angle-up"></i>
+<a class="scroll-to-top rounded js-scroll-trigger" pageScroll href="#page-top">
+  <i class="fa fa-angle-up"></i>
 </a>

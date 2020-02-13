@@ -156,9 +156,9 @@
       <h3 class="text-secondary mb-0">Portfolio</h3>
       <h2 class="mb-5">Recent Projects</h2>
     </div>
-    <div class="row no-gutters" *ngFor="let cat of categories">
+    <div class="row no-gutters">
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" *ngFor="let cat of categories">
         <a class="portfolio-item" [routerLink]="['/bycategory/, cat._id']">
           <span class="caption">
             <span class="caption-content">
@@ -169,13 +169,13 @@
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="{{catFirst}}" alt="First slide">
+                <img class="d-block w-100" src="{{cat.catFirst}}" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="{{catSecond}}" alt="Second slide">
+                <img class="d-block w-100" src="{{cat.catSecond}}" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="{{catThird}}" alt="Third slide">
+                <img class="d-block w-100" src="{{cat.catThird}}" alt="Third slide">
               </div>
             </div>
           </div>
@@ -281,7 +281,7 @@
   </div>
   <br />
   <div class="text-center">
-    <a class="btn btn-dark btn-xl js-scroll-trigger" href="../../assets/portfolio/resume.html">Résumé</a>
+    <a class="btn btn-dark btn-xl" [routerLink]="['/resume/']">Résumé</a>
   </div>
 </section>
 
