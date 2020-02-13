@@ -29,12 +29,10 @@
               "src/asserts/img"
             ],
             "styles": [
-              "src/assets/stylish-portfolio.min.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/vendor/jqueryeasing/jquery/easin",
               "src/assets/js/stylish-portfolio.min.js",
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
