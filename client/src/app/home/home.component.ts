@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+
 import { Post } from '../post/post';
 import { HomeService } from '../home.service';
+import { PageScrollService } from 'ngx-page-scroll-core';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +15,7 @@ export class HomeComponent implements OnInit {
   posts: Post[] = [];
   isLoadingResults = true;
 
-  constructor(private api: HomeService) { }
+  constructor(private api: HomeService, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit() {
     this.api.getPosts()

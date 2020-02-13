@@ -47,6 +47,8 @@ import { NotFoundComponent } from './notFound/not-found.component';
 import { Alert, AlertModule } from './_alert';
 import { ToastrModule } from 'ngx-toastr';
 import { ResumeComponent } from './resume/resume.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   declarations: [
@@ -97,7 +99,9 @@ import { ResumeComponent } from './resume/resume.component';
     AlertModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxPageScrollCoreModule,
+    NgxPageScrollModule
   ],
   providers: [
     {
