@@ -22,7 +22,9 @@ export class CategoryEditComponent implements OnInit {
   categoryForm: FormGroup;
   id = '';
   catName = '';
-  catContent = '';
+  catFirst = '';
+  catSecond = '';
+  catThird = '';
   updated: Date = null;
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
@@ -33,7 +35,9 @@ export class CategoryEditComponent implements OnInit {
     this.getCategory(this.route.snapshot.params.id);
     this.categoryForm = this.formBuilder.group({
       catName: [null, Validators.required],
-      catContent: [null, Validators.required]
+      catFirst: [null, Validators.required],
+      catSecond:[null, Validators.required],
+      catThird:[null, Validators.required]
     });
   }
 
@@ -42,7 +46,9 @@ export class CategoryEditComponent implements OnInit {
       this.id = data._id;
       this.categoryForm.setValue({
         catName: data.catName,
-        catContent: data.catContent
+        catFirst: data.catFirst,
+        catSecond: data.catSecond,
+        catThird: data.catThird
       });
     });
   }

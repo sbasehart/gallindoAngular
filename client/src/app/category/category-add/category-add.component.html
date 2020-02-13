@@ -18,11 +18,24 @@
         </mat-error>
       </div>
       <div class="form-group">
-        <label for="catContent">Category Content</label>
-        <ckeditor matInput placeholder="Category Content" formControlName="catContent" required></ckeditor>
+        <label for="catFirst">Image URL</label>
+        <input matInput placeholder="Category Content" formControlName="catFirst" required>
         <mat-error>
-          <span *ngIf="!categoryForm.get('catContent').valid && categoryForm.get('catContent').touched">Please enter
-            Category Description</span>
+          <span *ngIf="!categoryForm.get('catFirst').valid && categoryForm.get('catFirst').touched">Please Enter Image</span>
+        </mat-error>
+      </div> 
+      <div class="form-group">
+        <label for="catSecond">Image URL</label>
+        <input matInput placeholder="Category Content" formControlName="catSecond" required>
+        <mat-error>
+          <span *ngIf="!categoryForm.get('catSecond').valid && categoryForm.get('catSecond').touched">Please Enter Image</span>
+        </mat-error>
+      </div> 
+      <div class="form-group">
+        <label for="catThird">Image URL</label>
+        <input matInput placeholder="Category Content" formControlName="catThird" required>
+        <mat-error>
+          <span *ngIf="!categoryForm.get('catThird').valid && categoryForm.get('catThird').touched">Please Enter Image</span>
         </mat-error>
       </div> 
       <button type="submit" [disabled]="!categoryForm.valid" mat-flat-button color="primary">

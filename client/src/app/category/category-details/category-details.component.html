@@ -13,8 +13,10 @@
       <p>Updated: {{category.updated | date}}</p>
     </div>
     <div class="col-md-7">
-      <p>Department Description:</p>
-      <small innerHTML={{category.catContent}}></small>
+      <p>Slide Images:</p>
+      <img src="{{category.catFirst}}">
+      <img src="{{category.catSecond}}">
+      <img src="{{category.catThird}}">
     </div>
     <div class="col-md-2">
       <a class="btn btn-block" [routerLink]="['/category/edit/', category._id]">
