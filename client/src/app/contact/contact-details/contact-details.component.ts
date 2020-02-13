@@ -6,7 +6,7 @@ import { PostService } from '../../post.service';
 import { Post } from '../../post/post';
 
 @Component({
-  selector: 'con-contact-details',
+  selector: 'app-contact-details',
   templateUrl: './contact-details.component.html',
   styleUrls: ['./contact-details.component.scss']
 })
