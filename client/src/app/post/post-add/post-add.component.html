@@ -24,7 +24,7 @@
       <input matInput placeholder="Post Client" formControlName="postClient" [errorStateMatcher]="matcher">
       <br>
       <label for="postDesc">Image or Video Embed Code : </label>
-      <input placeholder="Paste Embed Code Here (available on youtube and instagram)" formControlName="postDesc">
+      <textarea placeholder="Paste Embed Code Here (available on youtube and instagram)" formControlName="postDesc" rows="6"></textarea>
       <br>
       <br>
       <button type="submit" [disabled]="!postForm.valid" mat-flat-button color="primary">

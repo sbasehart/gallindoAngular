@@ -1,13 +1,11 @@
 .dashboard {
-    // background: url(https://image.freepik.com/free-vector/abstract-red-line-black-background-business-card_41981-1024.jpg), no-repeat center center fixed;
-    // min-height: 700px;
-    // background-size: cover;
     min-height: 600px;
     background-color:(0,0,0,0.3)
 }
 
-label, input {
-    color:black
+label {
+    color:black;
+    max-width:100%
 }
 
 select{
@@ -29,7 +27,7 @@ select{
     color: grey !important;
 }
 
-.mat-input-element {
+.mat-input-element, input, textarea {
     padding: 10px;
     border: 1px solid grey;
     margin: 20px;

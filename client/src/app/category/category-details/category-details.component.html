@@ -14,9 +14,9 @@
     </div>
     <div class="col-md-7">
       <p>Slide Images:</p>
-      <img src="{{category.catFirst}}">
-      <img src="{{category.catSecond}}">
-      <img src="{{category.catThird}}">
+      <img src="{{category.catFirst}}" style="max-width:300px">
+      <img src="{{category.catSecond}}" style="max-width:300px">
+      <img src="{{category.catThird}}" style="max-width:300px">
     </div>
     <div class="col-md-2">
       <a class="btn btn-block" [routerLink]="['/category/edit/', category._id]">
