@@ -20,6 +20,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ContactAddComponent } from'./contact/contact-add/contact-add.component';
 import { ContactDetailsComponent } from'./contact/contact-details/contact-details.component';
 import { NotFoundComponent } from './notFound/not-found.component';
+import { ResumeComponent } from './resume/resume.component'
 
 
 const routes: Routes = [
@@ -32,6 +33,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     data: { title: 'Blog Home' }
+  },
+  {
+    path: 'resume',
+    component: ResumeComponent,
+    data: { title: 'Resume' }
   },
   {
     path: 'admin',
@@ -132,7 +138,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

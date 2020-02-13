@@ -34,10 +34,10 @@
               "src/styles.scss"
             ],
             "scripts": [
+              "src/assets/vendor/jqueryeasing/jquery/easin",
+              "src/assets/js/stylish-portfolio.min.js",
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/vendor/jqueryeasing/jquery/easin",
-              "src/js/stylish-portfolio.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

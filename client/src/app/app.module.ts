@@ -46,6 +46,7 @@ import { ContactDetailsComponent } from './contact/contact-details/contact-detai
 import { NotFoundComponent } from './notFound/not-found.component';
 import { Alert, AlertModule } from './_alert';
 import { ToastrModule } from 'ngx-toastr';
+import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { ToastrModule } from 'ngx-toastr';
     ContactAddComponent,
     ContactDetailsComponent,
     NotFoundComponent,
-    
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
