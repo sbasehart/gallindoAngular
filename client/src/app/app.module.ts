@@ -34,7 +34,8 @@ import {
   MatSelectModule,
   MatOptionModule,
   MatGridListModule, 
-  MatExpansionModule} from '@angular/material';
+  MatExpansionModule,
+  MatSidenavModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BycategoryComponent } from './bycategory/bycategory.component';
 import { CKEditorModule } from 'ckeditor4-angular';
@@ -50,6 +51,8 @@ import { ResumeComponent } from './resume/resume.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { sanitizeHtmlPipe } from './sanitize-html.pipe';
+import { SidebarModule } from 'ng-sidebar';
+import {NgxPrintModule} from 'ngx-print';
 
 @NgModule({
   declarations: [
@@ -96,6 +99,7 @@ import { sanitizeHtmlPipe } from './sanitize-html.pipe';
     MatGridListModule,
     MatSelectModule,
     MatOptionModule,
+    MatSidenavModule,
     CKEditorModule,
     MatContenteditableModule,
     AlertModule,
@@ -103,7 +107,9 @@ import { sanitizeHtmlPipe } from './sanitize-html.pipe';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxPageScrollCoreModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    NgxPrintModule,
+    SidebarModule.forRoot()
   ],
   providers: [
     {

@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lemonada&display=swap');
+
+.container {
+    background-color: rgba(255,255,255,0.7);
+    margin-top:3%;
+    margin-bottom:3%
+}
+
+h2{
+    padding: 3%;
+    font-family: 'Lemonada', cursive;
+}
+
 .form-item {
     background: #FFF;
     border: 2px solid #D8E1E4;
@@ -27,7 +40,7 @@ select{
 }
 
 .mat-flat-button[disabled][disabled] {
-        background-color: red;
+        background-color: blue;
         display: block;
         color:grey
     

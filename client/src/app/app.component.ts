@@ -13,8 +13,13 @@ export class AppComponent implements OnInit {
   title = 'client';
   categories: Category[] = [];
   loginStatus = false;
+  opened: boolean;
+  mybool:boolean;
+  mybooltwo:boolean;
 
   constructor(private api: HomeService, private authService: AuthService, private router: Router) { }
+
+  
 
   ngOnInit() {
     this.authService.isLoggedIn.subscribe((status: any) => {
@@ -25,6 +30,7 @@ export class AppComponent implements OnInit {
         this.loginStatus = false;
       }
     });
+    this.showDiv();
     this.api.getCategories()
       .subscribe((res: any) => {
         this.categories = res;
@@ -32,6 +38,22 @@ export class AppComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+  }
+
+  // private _opened: boolean = false;
+ 
+  // private _toggleSidebar() {
+  //   this._opened = !this._opened;
+  // }
+
+  showDiv(){
+    if (this.router.url === '/home') {
+      this.mybool=true;
+      this.mybooltwo=false;
+    } else { 
+      this.mybool=false;
+      this.mybooltwo=true;
+    }
   }
   
   myFunction() {
