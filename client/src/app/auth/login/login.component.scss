@@ -1,15 +1,15 @@
-.login {
-    margin-top: 20%;
+.container{
+    margin: 10% auto
 }
 
 .mat-form-field {
     display: block;
-    padding :15px
+    padding :15px;
 }
 
-.form-control {
+.input {
     background: #FFF;
-    border: 2px solid #D8E1E4;
+    border: 2px solid grey;
     height: 54px;
     font-size: 14px;
     padding: 15px;

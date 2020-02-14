@@ -1,8 +1,11 @@
 <div class="container">
-  <div class="row">
+  <div class="row text-center">
+    <img src="https://img.pngio.com/hd-opossums-with-white-background-transparent-png-image-download-possum-png-701_346.png" style="max-width:200px">
     <div class="example-loading-shade" *ngIf="isLoadingResults">
       <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
+  </div>
+    <div class="row">
     <mat-card class="example-card">
       <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)">
         <mat-form-field class="example-full-width">

@@ -33,7 +33,7 @@ export class ContactAddComponent implements OnInit {
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
   posts: Post[] = [];
-  public message = "Thank you! You will now be redirected back to the home page.";
+  public message = "Thank you! You will now be redirected to the home page.";
 
   @ViewChild(ToastContainerDirective, {static: true}) toastContainer: ToastContainerDirective;
 
