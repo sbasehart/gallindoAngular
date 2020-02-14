@@ -19,8 +19,6 @@ export class AppComponent implements OnInit {
 
   constructor(private api: HomeService, private authService: AuthService, private router: Router) { }
 
-  
-
   ngOnInit() {
     this.authService.isLoggedIn.subscribe((status: any) => {
       console.log(status);
@@ -30,29 +28,21 @@ export class AppComponent implements OnInit {
         this.loginStatus = false;
       }
     });
-    this.showDiv();
     this.api.getCategories()
       .subscribe((res: any) => {
         this.categories = res;
         console.log(this.categories);
       }, err => {
         console.log(err);
-      });
+    });
+    this.showDiv();
   }
 
-  // private _opened: boolean = false;
- 
-  // private _toggleSidebar() {
-  //   this._opened = !this._opened;
-  // }
-
   showDiv(){
-    if (this.router.url === '/home') {
-      this.mybool=true;
-      this.mybooltwo=false;
-    } else { 
+    if (this.router.url === '/') {
       this.mybool=false;
-      this.mybooltwo=true;
+    } else { 
+      this.mybool=true;
     }
   }
   

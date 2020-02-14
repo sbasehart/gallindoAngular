@@ -1,37 +1,36 @@
 <mat-sidenav-container class="example-container" >
-  <mat-sidenav #sidenav mode="side" [mode]="push" [(opened)]="opened" position="end">
+  <mat-sidenav #sidenav mode="side" [mode]="push" [(opened)]="opened" position="end" style="width:15%">
     <a class="menu-toggle rounded" (click)="sidenav.toggle()" style="cursor:pointer">
       <span class="fa fa-close"></span></a>
       <br>
-      <br>
-      <br>
       <ul>
-        <li class="nav-link">
-          <a class="nav-link" pageScroll [routerLink]="['/home']" [fragment]="'page-top'">Home</a>
+        <li>
+          <a class="navbar-brand" [routerLink]="['/home']" [fragment]="'page-top'">Galindo</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" pageScroll [routerLink]="['/home']" [fragment]="'about'">About</a>
+          <a class="nav-link" [routerLink]="['/home']" [fragment]="'page-top'">Home</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" pageScroll  [routerLink]="['/home']" [fragment]="'services'">Gallery</a>
+          <a class="nav-link" [routerLink]="['/home']" [fragment]="'about'">About</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" pageScroll  [routerLink]="['/home']" [fragment]="'portfolio'">Portfolio</a>
+          <a class="nav-link" [routerLink]="['/home']" [fragment]="'services'">Gallery</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" pageScroll  [routerLink]="['/home']" [fragment]="'contact'">Contact</a>
+          <a class="nav-link" [routerLink]="['/home']" [fragment]="'portfolio'">Portfolio</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link"  [routerLink]="['/resume']">Résumé</a>
+          <a class="nav-link" [routerLink]="['/home']" [fragment]="'contact'">Contact</a>
+        </li>
+        <li class="nav-link">
+          <a class="nav-link" [routerLink]="['/resume']">Résumé</a>
         </li>
       </ul>
   </mat-sidenav>
   <mat-sidenav-content>
-    <a class="menu-toggle rounded" (click)="sidenav.toggle()">
-      <span class="fa fa-bars" style="cursor:pointer" *ngIf="loginStatus === false"></span>
+    <a class="menu-toggle rounded" (click)="sidenav.toggle()" *ngIf="loginStatus === false">
+      <span class="fa fa-bars" style="cursor:pointer"></span>
     </a>
-
-
 
     <div class="topnav" id="myTopnav" *ngIf="loginStatus === true">
       <a class="nav-link" [routerLink]="['/admin']">Admin</a>
@@ -43,14 +42,13 @@
       </a>
       <span class="navbar-text" (click)="logout()">Logout</span>
     </div>
+
     <router-outlet></router-outlet>
     <br>
+
     <footer class="footer text-center">
       <div class="container">
         <ul class="list-inline mb-5">
-          <!-- <li class="list-inline-item">
-          <img class="social-link rounded-circle text-white" src="./img/facebook.png"  href="https://www.facebook.com/galindo91">
-        </li> -->
           <li class="list-inline-item">
             <a href="https://www.instagram.com/gabbygalindohair/" target="_blank">
               <img class="social-link rounded-circle text-white" src="../../assets/img/instagram.png"></a>
@@ -67,14 +65,9 @@
 
     <!-- Scroll to Top Button-->
     <!-- If on Home Page-->
-    <a class="scroll-to-top rounded" pageScroll *ngIf="!mybool" [routerLink]="['/home']" [fragment]="'page-top'">
+    <!-- <a class="scroll-to-top rounded" pageScroll [routerLink]="['/home']" [fragment]="'page-top'">
       <i class="fa fa-angle-up"></i>
-    </a>
-
-    <!-- If NOT on Home Page-->
-    <a class="scroll-to-top rounded" pageScroll *ngIf="!mybooltwo" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
+    </a> -->
 
   </mat-sidenav-content>
 </mat-sidenav-container>
