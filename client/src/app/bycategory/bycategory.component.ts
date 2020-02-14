@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../post/post';
 import { HomeService } from '../home.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { CategoryService } from '../category.service';
+import { Category } from '../category/category';
 
 @Component({
   selector: 'app-bycategory',
@@ -15,8 +17,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class BycategoryComponent implements OnInit {
   posts: Post[] = [];
   isLoadingResults = true;
+  data: Category[] = [];
 
-  constructor(private route: ActivatedRoute, private api: HomeService, private sanitizer: DomSanitizer) { 
+  constructor(private route: ActivatedRoute, private api: HomeService, private sanitizer: DomSanitizer, private categoryService: CategoryService) { 
   }
 
   transform(v:string):SafeHtml {
@@ -26,6 +29,15 @@ export class BycategoryComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.getPostsByCategory(this.route.snapshot.params.id);
+    });
+    this.categoryService.getCategories()
+    .subscribe((res: any) => {
+      this.data = res;
+      console.log(this.data);
+      this.isLoadingResults = false;
+    }, err => {
+      console.log(err);
+      this.isLoadingResults = false;
     });
   }
 
