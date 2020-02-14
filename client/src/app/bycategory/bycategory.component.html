@@ -1,13 +1,17 @@
 <div class="videos container justify-content-center text-center">
-  <h3>{{cat.catName}}</h3>
+  <h2 class="portfolioheader" *ngFor="let cat of categories">{{cat.catName}}</h2>
   <h4>Featured Works</h4>
   <div class="container">
     <div class="row">
       <div class="col-md-6" *ngFor="let post of posts">
-        <p innerHtml="{{post.postDesc}}"></p>
+        <span [innerHtml]="post.postDesc | sanitizeHtml"></span>       
         <h3>{{post.postTitle}}</h3>
         <h4>{{post.postClient}}</h4>
       </div>
     </div>
   </div>
+</div>
+
+<div class="text-center" style="margin-bottom: 3%">
+  <a class="btn btn-dark btn-xl js-scroll-trigger" [routerLink]="['/home']" [fragment]="'portfolio'">Back to Portfolio</a>
 </div>

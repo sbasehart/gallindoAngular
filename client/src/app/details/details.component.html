@@ -8,6 +8,10 @@
       <mat-card-title>{{post.postTitle}}</mat-card-title>
       <p>Client: {{post.postClient}}</p>
     </mat-card-header>
-    <mat-card-content [innerHTML]="post.postDesc"></mat-card-content>
+    <span [innerHtml]="post.postDesc | sanitizeHtml"></span>       
   </mat-card>
+</div>
+
+<div class="text-center" style="margin-bottom: 3%">
+  <a class="btn btn-dark btn-xl js-scroll-trigger" [routerLink]="['/bycategory']">Back to Portfolio</a>
 </div>

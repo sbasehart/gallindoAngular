@@ -49,6 +49,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ResumeComponent } from './resume/resume.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { sanitizeHtmlPipe } from './sanitize-html.pipe';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     ContactAddComponent,
     ContactDetailsComponent,
     NotFoundComponent,
-    ResumeComponent
+    ResumeComponent,
+    sanitizeHtmlPipe
   ],
   imports: [
     BrowserModule,
@@ -110,6 +112,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
       multi: true
     }
   ],
+  exports: [ sanitizeHtmlPipe ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

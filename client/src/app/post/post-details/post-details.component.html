@@ -15,7 +15,7 @@
     </div>
     <div class="col-md-4">
       <p>Media</p>
-      <small innerHTML={{post.postDesc}}></small>
+      <span [innerHtml]="post.postDesc | sanitizeHtml"></span>       
     </div>
     <div class="col-md-1">
       <a class="btn btn-block" [routerLink]="['/post/edit', post.id]">
