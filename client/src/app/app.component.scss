@@ -28,9 +28,9 @@ img {
     color: black;
   }
   
-  .topnav-link:active {
-    background-color: #4CAF50;
-    color: white;
+  .topnav-link.active {
+    background-color: rgba(255,255,255,0.6);
+    color: black;
   }
   
   .topnav .icon {
