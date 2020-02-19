@@ -1,25 +1,24 @@
-<div class="videos container justify-content-center text-center" >
-  <div class="nav" *ngFor="let cat of data" >
-    <a class="nav-link" [routerLink]="['/bycategory/', cat._id]">{{cat.catName}}</a>
-    <a href="javascript:void(0);" class="icon" (click)="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-    <span class="navbar-text" (click)="logout()">Logout</span>
+<div class="videos container justify-content-center text-center">
+  <div class="nav-wrapper">
+    <div class="nav">
+      <a class="nav-link" *ngFor="let cat of data" [routerLink]="['/bycategory/', cat._id]">{{cat.catName}}</a>
+    </div>
   </div>
 
-  <h4>Featured Works</h4>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6" *ngFor="let post of posts">
-        <span [innerHtml]="post.postDesc | sanitizeHtml"></span>       
-        <h3>{{post.postTitle}}</h3>
-        <h4>{{post.postClient}}</h4>
+  <div class="featured-works">
+    <h2>Featured Works</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" *ngFor="let post of posts">
+          <span [innerHtml]="post.postDesc | sanitizeHtml"></span>
+          <h3>{{post.postTitle}}</h3>
+          <h4>{{post.postClient}}</h4>
+        </div>
       </div>
     </div>
   </div>
-  
 </div>
 
-<div class="text-center" style="margin-bottom: 3%">
-  <a class="btn btn-dark btn-xl js-scroll-trigger" [routerLink]="['/home']" [fragment]="'portfolio'">Back to Portfolio</a>
-</div>
+<!-- <div class="text-center" style="margin-bottom: 3%">
+  <a class="btn btn-dark btn-xl" [routerLink]="['/home']" [fragment]="'portfolio'">Back to Portfolio</a>
+</div> -->
