@@ -1,6 +1,12 @@
 @import "../../assets/scss/stylish-portfolio.scss";
+@import url('https://fonts.googleapis.com/css?family=Krona+One&display=swap');
 
 
 .portfolio-container {
     max-width: 800px;
+}
+
+h2 {
+    font-family: "Krona One", sans-serif;
+    font-size: 24px
 }
