@@ -1,9 +1,6 @@
 @import "../../assets/scss/stylish-portfolio.scss";
 
 
-.mat-drawer-inner-container {
-    background-color: rgb(29, 128, 159) !important;
-    color:white !important;
-    max-width:25%;
-    text-align:left
+.portfolio-container {
+    max-width: 800px;
 }
