@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Krona+One&display=swap');
+
 .container{
-    margin: 10% auto
+    margin: 3% auto 1% auto;
+    background-color: #1D809F;
+    color:white;
+    border: 1px solid rgb(13, 64, 80);
+    box-shadow: 0 5px 5px black;
+    max-width: 1500px;
+}
+
+img {
+    align-self:center;
+    max-width:200px;
+    margin: 15px auto;
+}
+
+h2 {
+    font-family: "lobster";
 }
 
 .mat-form-field {
@@ -7,7 +25,11 @@
     padding :15px;
 }
 
-.input {
+.mat-form-field-infix {
+    border:none !important
+}
+
+.mat-input-element {
     background: #FFF;
     border: 2px solid grey;
     height: 54px;

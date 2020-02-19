@@ -1,15 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Krona+One&display=swap');
+
 .container{
-    margin: 10% auto
+    margin: 10% auto;
+    background-color: #1D809F;
+    color:white;
+    border: 1px solid rgb(13, 64, 80);
+    box-shadow: 0 5px 5px black;
+    max-width: 95%;
+}
+
+img {
+    display: flex;
+    // top: 40%;
+    // left: 50%;
+    transform: translate(225%, 5%);
+    text-align: center;
+    max-width:200px
+}
+
+h2 {
+    font-family: "lobster";
 }
 
 .mat-form-field {
     display: block;
-    padding :15px
+    padding :15px;
 }
 
-.form-control {
+.mat-form-field-infix {
+    border:none !important
+}
+
+.mat-input-element {
     background: #FFF;
-    border: 2px solid #D8E1E4;
+    border: 2px solid grey;
     height: 54px;
     font-size: 14px;
     padding: 15px;
