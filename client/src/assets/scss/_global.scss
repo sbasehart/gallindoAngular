@@ -46,6 +46,16 @@ body {
   min-height: 100vh
 }
 
+.content-section-two {
+  background-color: white;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  min-height: 60vh;
+}
+
+.contact-section {
+  align-content: center;
+}
+
 .content-section-heading {
   h2 {
     font-size: 3rem;

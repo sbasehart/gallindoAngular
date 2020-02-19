@@ -1,11 +1,7 @@
 /* Side Menu */
-.mat-drawer-container{
-  background-color: rgb(29, 128, 159) !important
- }
 
  .mat-sidenav {
   background-color: rgb(29, 128, 159) !important;
-  color:white !important;
   max-width:25%;
   text-align:left
  }
@@ -17,7 +13,15 @@
  }
 
  a.nav-link{
-   color:white !important
+  color:white !important;
+  display: block;
+  padding: .5rem 0 !important;
+ }
+
+ a.nav-link:hover {
+   font-style: italic;
+   font-weight: bold;
+   text-decoration: underline;;
  }
 
  .ng-sidebar--right {
@@ -75,7 +79,7 @@
     }
 }
 
-a.navbar-brand {
+a.navbar-brand, a.navbar-brand:visited {
   display: inline-block;
   padding-top: .3125rem;
   padding-bottom: .3125rem;
@@ -85,5 +89,5 @@ a.navbar-brand {
   line-height: inherit;
   white-space: nowrap;
   border-bottom: 1px solid white;
-  color:white !important
+  color:white !important;
 }
