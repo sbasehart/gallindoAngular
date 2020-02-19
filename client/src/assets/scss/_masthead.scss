@@ -16,11 +16,44 @@
     margin: 0;
     padding: 0;
     font-family: 'Dancing Script', cursive;
+    animation: moveInLeft 1.5s ease-out;
+  }
+  h3 {
+    animation: moveInRight 1.5s ease-out;
   }
   @media (min-width: 992px) {
     height: 100vh;
     h1 {
       font-size: 5.5rem;
     }
+  }
+}
+
+
+@keyframes moveInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-100px)
+  }
+  80% {
+      transform: translateX(10px)
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0)
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(100px)
+  }
+  80% {
+      transform: translateX(-10px)
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0)
   }
 }

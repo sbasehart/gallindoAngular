@@ -13,11 +13,37 @@ body {
   padding: 1.25rem 2.5rem;
 }
 
+.btn:link, .btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding:15px 40px;
+  display:inline-block;
+  border-radius: 100px;
+  transition:all .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.btn-white:link {
+  color: #777;
+  background-color: white;
+}
+
 // Content Section
 .content-section {
-  padding-top: 5rem;
-  padding-bottom: 7.5rem;
+  // padding-top: 5rem;
+  // padding-bottom: 7.5rem;
   background-color: white;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  min-height: 100vh
 }
 
 .content-section-heading {
