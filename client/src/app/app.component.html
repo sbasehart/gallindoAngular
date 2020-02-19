@@ -8,22 +8,22 @@
           <a class="navbar-brand" [routerLink]="['/home']" [fragment]="'page-top'">Galindo</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" [routerLink]="['/home']" [fragment]="'page-top'">Home</a>
+          <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/home']" [fragment]="'page-top'">Home</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" [routerLink]="['/home']" [fragment]="'about'">About</a>
+          <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/home']" [fragment]="'about'">About</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" [routerLink]="['/home']" [fragment]="'services'">Gallery</a>
+          <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/home']" [fragment]="'services'">Gallery</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" [routerLink]="['/home']" [fragment]="'portfolio'">Portfolio</a>
+          <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/home']" [fragment]="'portfolio'">Portfolio</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" [routerLink]="['/home']" [fragment]="'contact'">Contact</a>
+          <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/home']" [fragment]="'contact'">Contact</a>
         </li>
         <li class="nav-link">
-          <a class="nav-link" [routerLink]="['/resume']">Résumé</a>
+          <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/resume']">Résumé</a>
         </li>
       </ul>
   </mat-sidenav>
