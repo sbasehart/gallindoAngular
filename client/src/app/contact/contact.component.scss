@@ -1,5 +1,10 @@
 .dashboard {
     min-height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    width: 98%;
+    margin: 10px auto;
+    padding: 0 10%;
 }
 
 label {
@@ -17,7 +22,7 @@ select{
 .mat-flat-button {
     margin: 15px 15px 0 15px;
     background-color: grey;
-    color: black;
+    color: white;
 }
 
 .mat-flat-button:disabled {

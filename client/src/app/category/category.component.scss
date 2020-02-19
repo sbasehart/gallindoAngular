@@ -1,5 +1,10 @@
 .dashboard {
     min-height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    width: 98%;
+    margin: 10px auto;
+    padding: 0 10%;
 }
 
 select{
@@ -34,7 +39,7 @@ td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:
 .mat-flat-button {
     margin: 15px 15px 0 15px;
     background-color: grey;
-    color: black;
+    color: white;
 }
 
 .categories{

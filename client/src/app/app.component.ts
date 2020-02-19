@@ -24,8 +24,10 @@ export class AppComponent implements OnInit {
       console.log(status);
       if (status === true) {
         this.loginStatus = true;
+        document.getElementById("mainContainer").style.backgroundColor = "rgba(0,0,0,1)";
       } else {
         this.loginStatus = false;
+        document.getElementById("mainContainer").style.backgroundColor = "rgba(255,255,255,1)";
       }
     });
     this.api.getCategories()

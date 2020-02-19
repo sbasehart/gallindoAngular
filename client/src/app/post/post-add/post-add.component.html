@@ -23,14 +23,13 @@
       <label for="postClient">Client : </label>
       <input matInput placeholder="Post Client" formControlName="postClient" [errorStateMatcher]="matcher">
       <br>
-      <label for="postDesc">Image or Video Embed Code : </label>
+      <label for="postDesc">Image or Video Embed Code : <span class="whatsThis"><i class="fa fa-question-circle"></i></span></label>
       <textarea placeholder="Paste Embed Code Here (available on youtube and instagram)" formControlName="postDesc" rows="6"></textarea>
       <br>
       <br>
       <button type="submit" [disabled]="!postForm.valid" mat-flat-button color="primary">
         Save
       </button>
-
     </form>
   </mat-card>
 </div>
