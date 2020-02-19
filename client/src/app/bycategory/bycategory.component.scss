@@ -6,13 +6,15 @@
 // }
 
 #resume-bg, .videos {
-    background-color: white; 
-    margin-top: 3%; 
-    margin-bottom: 3%; 
+    background-color: #155d74; 
+    margin: 0;
     padding-top: 5%; 
     padding-bottom: 5%; 
     padding-left: 10%; 
-    padding-right: 10%
+    padding-right: 10%;
+    max-width:100%;
+
+    animation: fadeIn;
 }
 
 .row {
@@ -99,16 +101,18 @@ img {
     transform: translate(-40%, 0);
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 1px black solid;
+    border-bottom: 1px white solid;
 }
 
 .nav-link {
     font-family: 'Krona One', sans-serif;
-    color:black
+    color:white
 }
 
 .nav-link:hover {
     text-transform: uppercase;
+    background-color:rgba(255,255,255,0.6);
+    color:black
 }
 
 
@@ -117,5 +121,19 @@ img {
 }
 
 .featured-works {
-    margin-top: 7%
+    margin: 7% auto;
+    background-color: white;
+    padding:5%
+}
+
+.image-wrapper {
+    width: 350px !important;
+    height: 180px !important;
+    overflow:hidden !important;
+    margin: 10px auto; 
+}
+
+.image-wrapper span {
+    display:block !important;
+    max-width:100% !important;
 }

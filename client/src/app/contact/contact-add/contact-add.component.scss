@@ -40,15 +40,15 @@ select{
 }
 
 .mat-flat-button[disabled][disabled] {
-        background-color: blue;
+        background-color: black;
         display: block;
         color:grey
     
 }
 
 .mat-flat-button {
-    background-color: red;
-    display: block;
-    color:white
+    margin: 15px 15px 0 15px;
+    background-color: grey;
+    color: black;
 }
 

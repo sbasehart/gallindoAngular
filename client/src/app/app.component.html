@@ -1,44 +1,52 @@
-<mat-sidenav-container class="example-container" >
+<mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" [mode]="push" [(opened)]="opened" position="end" style="width:15%">
     <a class="menu-toggle rounded" (click)="sidenav.toggle()" style="cursor:pointer">
       <span class="fa fa-close"></span></a>
-      <br>
-      <ul>
-        <li>
-          <a class="navbar-brand" [routerLink]="['/home']" [fragment]="'page-top'">Galindo</a>
-        </li>
-        <li class="nav-link">
-          <a class="nav-link" (click)="sidenav.toggle()" [routerLinkActive]="active" [routerLink]="['/home']" [fragment]="'page-top'">Home</a>
-        </li>
-        <li class="nav-link">
-          <a class="nav-link" (click)="sidenav.toggle()" [routerLinkActive]="active" [routerLink]="['/home']" [fragment]="'about'">About</a>
-        </li>
-        <li class="nav-link">
-          <a class="nav-link" (click)="sidenav.toggle()" [routerLinkActive]="active" [routerLink]="['/home']" [fragment]="'services'">Gallery</a>
-        </li>
-        <li class="nav-link">
-          <a class="nav-link" (click)="sidenav.toggle()" [routerLinkActive]="active" [routerLink]="['/home']" [fragment]="'portfolio'">Portfolio</a>
-        </li>
-        <li class="nav-link">
-          <a class="nav-link" (click)="sidenav.toggle()" [routerLinkActive]="active" [routerLink]="['/home']" [fragment]="'contact'">Contact</a>
-        </li>
-        <li class="nav-link">
-          <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/resume']">Résumé</a>
-        </li>
-      </ul>
+    <br>
+    <ul>
+      <li>
+        <a class="navbar-brand" [routerLink]="['/home']" [fragment]="'page-top'">Galindo</a>
+      </li>
+      <li class="nav-link">
+        <a class="nav-link" (click)="sidenav.toggle()" routerLinkActive="active" [routerLink]="['/home']"
+          [fragment]="'page-top'">Home</a>
+      </li>
+      <li class="nav-link">
+        <a class="nav-link" (click)="sidenav.toggle()" routerLinkActive="active" [routerLink]="['/home']"
+          [fragment]="'about'">About</a>
+      </li>
+      <li class="nav-link">
+        <a class="nav-link" (click)="sidenav.toggle()" routerLinkActive="active" [routerLink]="['/home']"
+          [fragment]="'services'">Gallery</a>
+      </li>
+      <li class="nav-link">
+        <a class="nav-link" (click)="sidenav.toggle()" routerLinkActive="active" [routerLink]="['/home']"
+          [fragment]="'portfolio'">Portfolio</a>
+      </li>
+      <li class="nav-link">
+        <a class="nav-link" (click)="sidenav.toggle()" routerLinkActive="active" [routerLink]="['/home']"
+          [fragment]="'contact'">Contact</a>
+      </li>
+      <li class="nav-link">
+        <a class="nav-link" (click)="sidenav.toggle()" [routerLink]="['/resume']">Résumé</a>
+      </li>
+    </ul>
   </mat-sidenav>
   <mat-sidenav-content>
-    <img src="https://media2.giphy.com/media/xT0BKNWzYobc677hYY/giphy.gif" alt="admin logo" *ngIf="loginStatus === true">
+    <div class="img-wrapper text-center">
+      <img src="https://media2.giphy.com/media/xT0BKNWzYobc677hYY/giphy.gif" alt="admin logo"
+        *ngIf="loginStatus === true">
+    </div>
 
     <a class="menu-toggle rounded" (click)="sidenav.toggle()" *ngIf="loginStatus === false">
       <span class="fa fa-bars" style="cursor:pointer"></span>
     </a>
 
     <div class="topnav" id="myTopnav" *ngIf="loginStatus === true">
-      <a class="topnav-link" [routerLink]="['/admin']">Admin</a>
-      <a class="topnav-link" [routerLink]="['/category']">Categories</a>
-      <a class="topnav-link" [routerLink]="['/post']">Jobs</a>
-      <a class="topnav-link" [routerLink]="['/contact']">Contacts</a>
+      <a class="topnav-link" routerLinkActive="active" [routerLink]="['/admin/']">Admin</a>
+      <a class="topnav-link" routerLinkActive="active" [routerLink]="['/category/']">Categories</a>
+      <a class="topnav-link" routerLinkActive="active" [routerLink]="['/post/']">Jobs</a>
+      <a class="topnav-link" routerLinkActive="active" [routerLink]="['/contact/']">Contacts</a>
       <a href="javascript:void(0);" class="icon" (click)="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -63,6 +71,7 @@
         </ul>
         <p class="text-muted small mb-0">Copyright &copy; GabbyGalindo 2019 - Present<br>Grace Designs</p>
       </div>
+      <small><a [routerLink]="['/login/']">Admin</a></small>
     </footer>
 
     <!-- Scroll to Top Button-->

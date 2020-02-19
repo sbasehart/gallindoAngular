@@ -159,7 +159,7 @@
     <div class="row no-gutters">
 
       <div class="col-lg-6" *ngFor="let cat of categories">
-        <a class="portfolio-item" [routerLink]="['/bycategory/', cat._id]">
+        <a class="portfolio-item" [routerLink]="['/bycategory/', cat._id]" [fragment]="'nav'">
           <span class="caption">
             <span class="caption-content">
               <h2>{{cat.catName}}</h2>

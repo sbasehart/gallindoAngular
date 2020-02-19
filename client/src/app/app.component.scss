@@ -3,7 +3,7 @@
 
 img {
     align-self:center;
-    max-width:200px;
+    max-width:300px;
     margin: 15px auto;
 }
 
@@ -65,4 +65,12 @@ img {
       text-align: left;
       color:white;
       padding: 10px 30px;
+      cursor: pointer
   }
+
+  .navbar-text:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+
