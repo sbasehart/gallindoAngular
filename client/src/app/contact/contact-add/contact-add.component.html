@@ -23,7 +23,7 @@
                 <textarea matInput class="form-control"  rows="6" placeholder="Message" formControlName="conMessage" rows="5"></textarea>
             </div>
             <p class="text-center">**Must Complete ALL Fields</p>
-            <button class="btn btn-block" type="submit" [disabled]="!contactForm.valid" mat-flat-button (click)="success('Success!!')">
+            <button class="btn btn-block" type="submit" [disabled]="!contactForm.valid" mat-flat-button>
                 Submit
             </button>
             <alert></alert>

@@ -1,7 +1,9 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+
+import { User } from '../../../models/User';
 
 const apiUrl = 'http://localhost:3000/api/auth/';
 
@@ -9,7 +11,7 @@ const apiUrl = 'http://localhost:3000/api/auth/';
   providedIn: 'root'
 })
 export class AuthService {
-
+  user = new BehaviorSubject<User>(null);
   @Output() isLoggedIn: EventEmitter<any> = new EventEmitter();
   loggedInStatus = false;
   redirectUrl: string;
@@ -22,10 +24,12 @@ export class AuthService {
         tap(_ => {
           this.isLoggedIn.emit(true);
           this.loggedInStatus = true;
+          localStorage.setItem('user', JSON.stringify({ data }));
         }),
         catchError(this.handleError('login', []))
       );
   }
+
 
   logout(): Observable<any> {
     return this.http.post<any>(apiUrl + 'logout', {})

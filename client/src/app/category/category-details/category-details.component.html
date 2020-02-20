@@ -19,7 +19,7 @@
       <img src="{{category.catThird}}" style="max-width:300px">
     </div>
     <div class="col-md-2">
-      <a class="btn btn-block" [routerLink]="['/category/edit/', category._id]">
+      <a class="btn btn-block" [routerLink]="['/category/edit/', category.id]">
         <mat-icon>edit</mat-icon>
       </a>
       <a class="btn btn-block" button (click)="deleteCategory(category.id)">
