@@ -10,7 +10,6 @@ import { Contact } from './contact';
 })
 export class ContactComponent implements OnInit {
 
-  // displayedColumns: string[] = ['appName', 'updated'];
   data: Contact[] = [];
   isLoadingResults = true;
 
@@ -27,6 +26,7 @@ export class ContactComponent implements OnInit {
         this.isLoadingResults = false;
       });
   }
+
 
 
   

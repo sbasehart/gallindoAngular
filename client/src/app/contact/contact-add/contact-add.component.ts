@@ -52,7 +52,7 @@ export class ContactAddComponent implements OnInit {
       conPhone : [null, Validators.required],
       conAddress1 : [null, Validators.required],
       conAddress2 : [null, Validators.required],
-      conResume : [null, Validators.required],
+      conMessage : [null, Validators.required],
     });
   }
 
