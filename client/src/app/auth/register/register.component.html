@@ -1,19 +1,19 @@
-<div class="container">
+<div class="container content-section" id="form">
+  <h2 class="text-center mb-0">Admin Login</h2>
   <div class="row text-center">
-    <img src="https://img.pngio.com/hd-opossums-with-white-background-transparent-png-image-download-possum-png-701_346.png" style="max-width:200px">
+    <img src="https://img.pngio.com/hd-opossums-with-white-background-transparent-png-image-download-possum-png-701_346.png">
     <div class="example-loading-shade" *ngIf="isLoadingResults">
       <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
   </div>
     <div class="row">
-    <mat-card class="example-card">
+    <div class="col-md-12 register">
       <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)">
         <mat-form-field class="example-full-width">
-          <input matInput type="fullName" placeholder="Full Name" formControlName="fullName"
-            [errorStateMatcher]="matcher">
+          <input matInput type="name" placeholder="Full Name" formControlName="Name" [errorStateMatcher]="matcher">
           <mat-error>
-            <span *ngIf="!registerForm.get('fullName').valid && registerForm.get('fullName').touched">Please enter your
-              Full Name</span>
+            <span *ngIf="!registerForm.get('name').valid && registerForm.get('name').touched">Please enter your
+              username</span>
           </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
@@ -32,9 +32,10 @@
           </mat-error>
         </mat-form-field>
         <div class="button-row">
-          <button type="submit" [disabled]="!registerForm.valid" mat-flat-button color="primary">Register</button>
+          <button type="submit" [disabled]="!registerForm.valid" mat-flat-button class="btn">Register</button>
         </div>
+        <br>
       </form>
-    </mat-card>
+    </div>
   </div>
 </div>
