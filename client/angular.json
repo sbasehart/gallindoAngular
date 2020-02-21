@@ -17,22 +17,22 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "./dist/client",
+            "index": "./src/index.html",
+            "main": "./src/main.ts",
+            "polyfills": "./src/polyfills.ts",
+            "tsConfig": "./tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/asserts/img"
+              "./src/favicon.ico",
+              "./src/assets",
+              "./src/asserts/img"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"            
             ],
             "scripts": [
-              "src/assets/js/stylish-portfolio.min.js",
+              "./src/assets/js/stylish-portfolio.min.js",
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
