@@ -20,7 +20,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class CategoryEditComponent implements OnInit {
 
   categoryForm: FormGroup;
-  id = '';
+  id = null;
   catName = '';
   catFirst = '';
   catSecond = '';
@@ -42,28 +42,22 @@ export class CategoryEditComponent implements OnInit {
   }
 
   getCategory(id: any) {
-    this.api.getCategory(id).subscribe((data: any) => {
-      this.id = data._id;
-      this.categoryForm.setValue({
-        catName: data.catName,
-        catFirst: data.catFirst,
-        catSecond: data.catSecond,
-        catThird: data.catThird
-      });
+    const category = this.api.getCategory(this.id)
+    this.categoryForm.setValue({
+      catName: category.catName,
+      catFirst: category.catFirst,
+      catSecond: category.catSecond,
+      catThird: category.catThird
     });
-  }
+  };
 
   onFormSubmit() {
     this.isLoadingResults = true;
     this.api.updateCategory(this.id, this.categoryForm.value)
-      .subscribe((res: any) => {
-          this.isLoadingResults = false;
-          this.router.navigate(['/category/']);
-        }, (err: any) => {
-          console.log(err);
-          this.isLoadingResults = false;
-        }
-      );
+    this.isLoadingResults = false;
+    this.router.navigate(['/category/']);
+    this.isLoadingResults = false;
+    console.error();  
   }
 
   categoryDetails() {

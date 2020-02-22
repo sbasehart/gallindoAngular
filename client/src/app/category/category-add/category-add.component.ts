@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CategoryService } from '../../category.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { DataStorageService } from '../../interceptors/data-storage.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -20,6 +21,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class CategoryAddComponent implements OnInit {
 
   categoryForm: FormGroup;
+  id = null;
   catName = '';
   catFirst = '';
   catSecond = '';
@@ -27,7 +29,7 @@ export class CategoryAddComponent implements OnInit {
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
 
-  constructor(private router: Router, private api: CategoryService, private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private api: CategoryService, private formBuilder: FormBuilder, private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
     this.categoryForm = this.formBuilder.group({
@@ -41,14 +43,8 @@ export class CategoryAddComponent implements OnInit {
   onFormSubmit() {
     this.isLoadingResults = true;
     this.api.addCategory(this.categoryForm.value)
-      .subscribe((res: any) => {
-          const id = res._id;
-          this.isLoadingResults = false;
-          this.router.navigate(['/category/']);
-        }, (err: any) => {
-          console.log(err);
-          this.isLoadingResults = false;
-        });
+    this.router.navigate(['/category/']);
+    this.dataStorageService.storeCategories();
   }
 
 }

@@ -19,14 +19,14 @@ mongoose.connect('mongodb://localhost/gallindoAngular', {
 }).then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://summerbasehart:JSMacias!1993@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://summerbasehart:JSMacias!1993@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

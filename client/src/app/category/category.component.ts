@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CategoryService } from '../category.service';
 import { Category } from './category';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-category',
@@ -9,22 +10,24 @@ import { Category } from './category';
 })
 export class CategoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['catName', 'catContent'];
+  @Input() category: Category;
+  @Input() index: number;
+
   data: Category[] = [];
   isLoadingResults = true;
+  categories: Category[];
+  subscription: Subscription
 
   constructor(private api: CategoryService) { }
 
   ngOnInit() {
-    this.api.getCategories()
-      .subscribe((res: any) => {
-        this.data = res;
-        console.log(this.data);
-        this.isLoadingResults = false;
-      }, err => {
-        console.log(err);
-        this.isLoadingResults = false;
-      });
+    this.subscription = this.api.categoriesChanged
+      .subscribe(
+        (categories: Category[]) => {
+          this.categories = categories;
+        }
+      );
+    this.categories = this.api.getCategories();
   }
 
 }
