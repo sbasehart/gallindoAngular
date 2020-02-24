@@ -15,8 +15,6 @@ export class CategoryComponent implements OnInit {
 
   data: Category[] = [];
   isLoadingResults = true;
-  categories: Category[];
-  subscription: Subscription
 
   constructor(private api: CategoryService) { }
 
