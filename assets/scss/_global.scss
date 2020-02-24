@@ -22,12 +22,22 @@ body {
   transition:all .2s;
 }
 
-.btn:hover {
+.btn-light:hover, .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(225,225,225,0.2);
+}
+
+.btn-dark:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.btn-light:active, .btn-primary:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
