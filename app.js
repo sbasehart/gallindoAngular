@@ -11,13 +11,24 @@ var contact = require('./routes/contact');
 var post = require('./routes/post');
 var cors = require('cors')
 
-mongoose.connect('mongodb://localhost/gallindoAngular', { 
-    promiseLibrary: require('bluebird'), 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true,
-    useCreateIndex: true
+mongoose.connect('mongodb+srv://summerbasehart:YrxykKtN8U4ilQ4F@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority', { 
+  dbName: 'gallindoAngular',
+  useNewUrlParser: true, 
+  promiseLibrary: require('bluebird'), 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  useCreateIndex: true
+
 }).then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
+
+// mongoose.connect('mongodb://localhost/gallindoAngular', { 
+//     promiseLibrary: require('bluebird'), 
+//     useNewUrlParser: true, 
+//     useUnifiedTopology: true,
+//     useCreateIndex: true
+// }).then(() =>  console.log('connection successful'))
+//   .catch((err) => console.error(err));
 
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://summerbasehart:JSMacias!1993@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority";
