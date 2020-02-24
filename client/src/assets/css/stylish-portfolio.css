@@ -369,7 +369,10 @@ a:hover, a:focus, a:active {
 }
 
 .bg-primary {
-  background-color: #1D809F !important;
+  background: linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxED5CYEYq8GWKy7Zm0qirIc1f1huJq4teQS9-bPDLkEgPOB8m);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .text-primary {
