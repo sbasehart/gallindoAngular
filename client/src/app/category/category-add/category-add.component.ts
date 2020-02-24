@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { CategoryService } from '../../category.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { DataStorageService } from '../../interceptors/data-storage.service';
+// import { DataStorageService } from '../../interceptors/data-storage.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -29,7 +29,9 @@ export class CategoryAddComponent implements OnInit {
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
 
-  constructor(private router: Router, private api: CategoryService, private formBuilder: FormBuilder, private dataStorageService: DataStorageService) { }
+  constructor(private router: Router, private api: CategoryService, private formBuilder: FormBuilder, 
+    // private dataStorageService: DataStorageService
+    ) { }
 
   ngOnInit() {
     this.categoryForm = this.formBuilder.group({
