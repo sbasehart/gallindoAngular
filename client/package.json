@@ -31,6 +31,7 @@
     "i": "^0.3.6",
     "jquery": "^3.4.1",
     "mat-contenteditable": "^9.1.0",
+    "mongodb-stitch": "^3.8.0",
     "ng-sidebar": "^9.2.0",
     "ngx-page-scroll": "^7.0.0",
     "ngx-page-scroll-core": "^7.0.0",
