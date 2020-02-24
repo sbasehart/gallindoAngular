@@ -46,7 +46,7 @@ export class CategoryAddComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addCategory(this.categoryForm.value)
     this.router.navigate(['/category/']);
-    this.dataStorageService.storeCategories();
+    // this.dataStorageService.storeCategories();
   }
 
 }
