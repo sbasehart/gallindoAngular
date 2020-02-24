@@ -117,15 +117,15 @@ img {
 }
 
 .featured-works {
-    margin: 7% auto;
+    margin: 1% auto;
     background-color: white;
-    padding:5%;
+    padding: 2%;
     box-shadow: 0 5px 10px rgba(0,0,0,0.6);
 }
 
 .image-wrapper {
-    width: 350px !important;
-    height: 180px !important;
+    max-width: 350px !important;
+    max-height: 180px !important;
     overflow:hidden !important;
     margin: 10px auto; 
 }
