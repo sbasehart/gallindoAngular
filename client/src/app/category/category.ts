@@ -1,5 +1,5 @@
 export class Category {
-    id: number;
+    id: string;
     catName: string;
     catFirst: string;
     catSecond: String;
