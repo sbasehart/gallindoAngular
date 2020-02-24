@@ -4,7 +4,8 @@
   background-color: rgb(29, 128, 159) !important;
   max-width:25%;
   text-align:left;
-  position:fixed
+  position:fixed;
+  min-width:15%
  }
 
  ul {
@@ -16,7 +17,7 @@
  a.nav-link{
   color:white !important;
   display: block;
-  padding: .5rem 0 !important;
+  padding: .5rem .5rem !important;
  }
 
  a.nav-link:hover {

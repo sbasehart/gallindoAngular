@@ -96,17 +96,18 @@ img {
 }
 
 .nav {
-    position: absolute;
+    position: fixed;
     left: 45%;
     transform: translate(-40%, 0);
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-bottom: 1px white solid;
 }
 
-.nav-link {
+.portfolio-link {
     font-family: 'Krona One', sans-serif;
-    color:white
+    color:white;
+    display: inline-flex !important
 }
 
 .nav-link:hover, .nav-link.active {

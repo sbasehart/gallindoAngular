@@ -1,9 +1,8 @@
-<div class="videos container justify-content-center text-center">
-  <div class="nav-wrapper">
-    <div class="nav" id="nav">
-      <a class="nav-link" *ngFor="let cat of data" routerLinkActive="active" [routerLink]="['/bycategory/', cat._id]" [fragment]="'nav'">{{cat.catName}}</a>
-    </div>
-  </div>
+<div class="videos container justify-content-center">
+  <nav class="container-fluid-nav text-center">
+    <a class="nav-link portfolio-link" *ngFor="let cat of data" routerLinkActive="active" [routerLink]="['/bycategory/', cat._id]"
+      [fragment]="'nav'">{{cat.catName}}</a>
+  </nav>
 
   <div class="featured-works">
     <h2>Featured Works</h2>
