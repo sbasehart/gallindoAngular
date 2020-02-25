@@ -47,25 +47,54 @@ body {
   background-color: white;
 }
 
+
+
 // Content Section
 .content-section {
   // padding-top: 5rem;
   // padding-bottom: 7.5rem;
   background-color: white;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  min-height: 100vh
 }
 
 .content-section-two {
   background-color: white;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  min-height: 60vh;
 }
 
 .content-section-three {
   background-color: rgba(29, 128, 159, 1);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  min-height: 100vh
+}
+
+@media screen and (min-width: 992px) {
+  .content-section {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    min-height: 100% !important;
+  }
+  .content-section-two {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    min-height: 100% !important;
+  }
+  .content-section-three {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    min-height: 100% !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .btn-xl:link{
+    min-width: 20%;    
+    font-weight:200;
+    padding: 15px 0px !important;
+    margin-bottom:5px
+  }
+  .content-section {
+    min-height: 100% !important;
+  }
+  .content-section-two {
+    min-height: 100% !important;
+  }
+  .content-section-three {
+    min-height: 100% !important;
+  }
 }
 
 .contact-section {
