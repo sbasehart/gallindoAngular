@@ -81,7 +81,7 @@ body {
 
 @media screen and (max-width: 991px) {
   .btn-xl:link{
-    width:100%;
+    min-width: 20%;    
     font-weight:200;
     padding: 15px 0px !important;
     margin-bottom:5px
