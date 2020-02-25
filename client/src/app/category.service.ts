@@ -11,66 +11,7 @@ const apiUrl = 'http://localhost:3000/api/category/';
 })
 export class CategoryService {
 
-  // categoriesChanged = new Subject<Category[]>();
-
   constructor(private http: HttpClient) { }
-
-  // private categories: Category[] = [];
-
-
-  // setCategories(categories: Category[]) {
-  //   this.categories = categories;
-  //   this.categoriesChanged.next(this.categories.slice());
-  // }
-
-  // getCategories() {
-  //   return this.categories.slice()
-  // }
-
-  // getCategory(index: number) {
-  //     return this.categories[index]
-  // }
-
-  // addCategory(category: Category) {
-  //     this.categories.push(category);
-  //     this.categoriesChanged.next(this.categories.slice())
-  // }
-
-  // addCategories(categories: Category[]) {
-  //     // for (let category of categories) {
-  //     //   this.addCategory(category);
-  //     // }
-  //     this.categories.push(...categories);
-  //     this.categoriesChanged.next(this.categories.slice());
-  // }
-
-  // updateCategory(index: number, newCategory: Category) {
-  //     this.categories[index] = newCategory;
-  //     this.categoriesChanged.next(this.categories.slice())
-  // }
-
-  // deleteCategory(index: number) {
-  //     this.categories.splice(index, 1);
-  //     this.categoriesChanged.next(this.categories.slice())
-  // }
-
-  // getCategories() {
-  //   return this.http
-  //   .get<Category[]>(apiUrl)
-  //     .pipe(
-  //       map(category => {
-  //         return category.map(category => {
-  //           return category
-  //         });
-  //       }),
-  //       tap(categories => {
-  //         this.setCategories(categories);
-  //         console.log('fetched Categories', categories)
-  //       }
-  //     ) 
-  //   )    
-
-  // }
 
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(apiUrl)
