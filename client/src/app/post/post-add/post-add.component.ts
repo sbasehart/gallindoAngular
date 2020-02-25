@@ -50,7 +50,7 @@ export class PostAddComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addPost(this.postForm.value)
       .subscribe((res: any) => {
-          // const id = res._id;
+          const id = res._id;
           this.isLoadingResults = false;
           this.router.navigate(['/post/']);
         }, (err: any) => {
