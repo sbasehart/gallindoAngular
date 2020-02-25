@@ -48,5 +48,4 @@ export class PostDetailsComponent implements OnInit {
         }
       );
   }
-
 }
