@@ -29,7 +29,11 @@ export class CategoryEditComponent implements OnInit {
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
 
-  constructor(private router: Router, private route: ActivatedRoute, private api: CategoryService, private formBuilder: FormBuilder) { }
+  constructor(
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private api: CategoryService, 
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getCategory(this.route.snapshot.params.id);
@@ -45,36 +49,26 @@ export class CategoryEditComponent implements OnInit {
     this.api.getCategory(id).subscribe((data: any) => {	
       this.id = data._id;
       this.categoryForm.setValue({
-        catname: data.catName,
+        catName: data.catName,
         catFirst: data.catFirst,
         catSecond: data.catSecond,
         catThird:data.catThird
       })
     });	
-    // const category = this.api.getCategory(this.id)
-    // this.categoryForm.setValue({
-    //   catName: category.catName,
-    //   catFirst: category.catFirst,
-    //   catSecond: category.catSecond,
-    //   catThird: category.catThird
-    // });
   };
 
   onFormSubmit() {
-    this.isLoadingResults = true;
     this.api.updateCategory(this.id, this.categoryForm.value)
-    .subscribe((res: any) => {	
-      this.isLoadingResults = false;	
-      this.router.navigate(['/category/']);	
-    }, (err: any) => {	
-      console.log(err);	
-      this.isLoadingResults = false;	
-    }
-    );
-    // this.isLoadingResults = false;
-    // this.router.navigate(['/category/']);
-    // this.isLoadingResults = false;
-    // console.error();  
+      .subscribe((res: any) => {
+          // const id = res.id;
+          this.isLoadingResults = false;
+          this.router.navigate(['/post/']);
+        }, (err: any) => {
+          console.log(err);
+          this.isLoadingResults = false;
+        }
+      );
+
   }
 
   categoryDetails() {

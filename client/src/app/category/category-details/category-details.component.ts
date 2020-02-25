@@ -23,6 +23,7 @@ export class CategoryDetailsComponent implements OnInit {
     this.api.getCategory(id)
       .subscribe((data: any) => {
         this.category = data;
+        this.category.id = data._id;        
         console.log(this.category);
         this.isLoadingResults = false;
       });
