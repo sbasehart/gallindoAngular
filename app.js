@@ -11,7 +11,7 @@ var contact = require('./routes/contact');
 var post = require('./routes/post');
 var cors = require('cors')
 
-mongoose.connect("mongodb+srv://summerbasehart:" + process.env.MONGO_ATLAS_PW + "@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority", { 
+mongoose.connect("mongodb+srv://summerbasehart:YrxykKtN8U4ilQ4F@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority", { 
   dbName: 'gallindoAngular',
   useNewUrlParser: true, 
   promiseLibrary: require('bluebird'), 
@@ -48,10 +48,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '/client/dist/client')));
+app.use(express.static(path.join(__dirname, '/client/src')));
 
 app.get('./*', function(req, res) {
-  res.sendFile(path.join(__dirname, '/client/dist/client/index.html'))
+  res.sendFile(path.join(__dirname, '/client/src/index.html'))
 })
 
 app.use('/api/auth', auth);

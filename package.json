@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "build" : "nodemon --watch src/ --exec babel ./src --out-dir ./dist --source-maps --copy-files"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "angular": "^1.7.9",
