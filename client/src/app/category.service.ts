@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, Subject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Category } from './category/category';
+import { environment } from 'src/environments/environment';
 
-const apiUrl = 'http://localhost:3000/api/category/';
+const apiUrl = environment.apiUrl + 'category/';
 
 @Injectable({
   providedIn: 'root'

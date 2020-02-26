@@ -11,16 +11,14 @@ var contact = require('./routes/contact');
 var post = require('./routes/post');
 var cors = require('cors')
 
-mongoose.connect('mongodb+srv://summerbasehart:YrxykKtN8U4ilQ4F@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority', { 
+mongoose.connect("mongodb+srv://summerbasehart:" + process.env.MONGO_ATLAS_PW + "@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority", { 
   dbName: 'gallindoAngular',
   useNewUrlParser: true, 
   promiseLibrary: require('bluebird'), 
-  useNewUrlParser: true, 
   useUnifiedTopology: true,
   useCreateIndex: true
-
 }).then(() =>  console.log('connection successful'))
-  .catch((err) => console.error(err));
+  .catch((err) => console.error('connection failed', err));
 
 // mongoose.connect('mongodb://localhost/gallindoAngular', { 
 //     promiseLibrary: require('bluebird'), 
@@ -31,13 +29,13 @@ mongoose.connect('mongodb+srv://summerbasehart:YrxykKtN8U4ilQ4F@cluster0-2g4yp.m
 //   .catch((err) => console.error(err));
 
 // const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://summerbasehart:JSMacias!1993@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
+// const uri = "mongodb+srv://summerbasehart:YrxykKtN8U4ilQ4F@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true,  useUnifiedTopology: true, promiseLibrary: require('bluebird'), useNewUrlParser: true});
 // client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
+//   const database = client.db("gallindoAngular");
+//   console.log('connection successful'),  
 //   client.close();
-// });
+// })
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

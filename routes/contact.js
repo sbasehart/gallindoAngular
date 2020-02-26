@@ -30,7 +30,6 @@ router.get('/:id', passport.authenticate('jwt', { session: false }), function (r
         console.log(post);
         res.json([contact, post]);
       });
-      
     });
   } else {
     return res.status(403).send({ success: false, msg: 'Unauthorized.' });

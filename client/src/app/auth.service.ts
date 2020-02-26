@@ -4,8 +4,9 @@ import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { User } from '../../../models/User';
+import { environment } from 'src/environments/environment';
 
-const apiUrl = 'http://localhost:3000/api/auth/';
+const apiUrl = environment.apiUrl + 'auth/';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(data: any): Observable<any> {
-    return this.http.post<any>(apiUrl + 'login', data)
+    return this.http.post<any>(apiUrl +'auth' + 'login', data)
       .pipe(
         tap(_ => {
           this.isLoggedIn.emit(true);
@@ -32,7 +33,7 @@ export class AuthService {
 
 
   logout(): Observable<any> {
-    return this.http.post<any>(apiUrl + 'logout', {})
+    return this.http.post<any>(apiUrl + 'auth' + 'logout', {})
       .pipe(
         tap(_ => {
           this.isLoggedIn.emit(false);
@@ -43,7 +44,7 @@ export class AuthService {
   }
 
   register(data: any): Observable<any> {
-    return this.http.post<any>(apiUrl + 'register', data)
+    return this.http.post<any>(apiUrl + 'auth' + 'register', data)
       .pipe(
         tap(_ => this.log('login')),
         catchError(this.handleError('login', []))

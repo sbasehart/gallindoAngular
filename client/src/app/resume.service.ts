@@ -4,8 +4,9 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Category } from './category/category';
 import { Post } from './post/post';
+import { environment } from 'src/environments/environment';
 
-const apiUrl = 'http://localhost:3000/api/public/';
+const api = environment.apiUrl + 'public/';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ResumeService {
   constructor(private http: HttpClient) { }
 
   getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(apiUrl + 'category')
+    return this.http.get<Category[]>(api + 'category')
       .pipe(
         tap(_ => this.log('fetched Categories')),
         catchError(this.handleError('getCategories', []))
@@ -23,7 +24,7 @@ export class ResumeService {
   }
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(apiUrl + 'post')
+    return this.http.get<Post[]>(api + 'post')
       .pipe(
         tap(_ => this.log('fetched Posts')),
         catchError(this.handleError('getPosts', []))
@@ -31,7 +32,7 @@ export class ResumeService {
   }
 
   getPostsByCategory(id: any): Observable<Post[]> {
-    return this.http.get<Post[]>(apiUrl + 'bycategory/' + id)
+    return this.http.get<Post[]>(api + 'bycategory/' + id)
       .pipe(
         tap(_ => this.log('fetched Posts')),
         catchError(this.handleError('getPosts', []))
@@ -39,7 +40,7 @@ export class ResumeService {
   }
 
   getPost(id: any): Observable<Post> {
-    return this.http.get<Post>(apiUrl + 'post/' + id).pipe(
+    return this.http.get<Post>(api + 'post/' + id).pipe(
       tap(_ => console.log(`fetched post by id=${id}`)),
       catchError(this.handleError<Post>(`getPost id=${id}`))
     );

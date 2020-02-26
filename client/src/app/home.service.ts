@@ -4,8 +4,9 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Category } from './category/category';
 import { Post } from './post/post';
+import { environment } from 'src/environments/environment';
 
-const apiUrl = 'http://localhost:3000/api/public/';
+const apiUrl = environment.apiUrl + 'public/';
 
 @Injectable({
   providedIn: 'root'

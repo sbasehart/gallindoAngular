@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Post } from './post/post';
+import { environment } from 'src/environments/environment';
 
-const apiUrl = 'http://localhost:3000/api/post/';
+const apiUrl = environment.apiUrl + 'post/';
 
 @Injectable({
   providedIn: 'root'

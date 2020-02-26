@@ -4,8 +4,9 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Contact } from './contact/contact';
 import { Post } from './post/post'
+import { environment } from 'src/environments/environment';
 
-const apiUrl = 'http://localhost:3000/api/contact/';
+const apiUrl = environment.apiUrl + 'contact/';
 
 @Injectable({
   providedIn: 'root'
