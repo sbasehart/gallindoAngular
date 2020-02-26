@@ -48,7 +48,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/client/dist/client')));
+
+app.get('./*', function(req, res) {
+  res.sendFile(path.join(__dirname, '/client/dist/client/index.html'))
+})
 
 app.use('/api/auth', auth);
 app.use('/api/category', category);

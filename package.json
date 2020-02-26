@@ -1,19 +1,12 @@
 {
-  "name": "gallindoAngular",
+  "name": "gallindoangular",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": "^13.8.0"
-  },
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "ng build --aot -prod --out-dir ./dist/client",
-    "heroku-prebuild": "cd client",
-    "build": "webpack"
+    "build" : "nodemon --watch src/ --exec babel ./src --out-dir ./dist --source-maps --copy-files"
   },
   "dependencies": {
-    "@angular/cli": "^9.0.3",
-    "@angular/compiler-cli": "^9.0.2",
     "angular": "^1.7.9",
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.5.5",
@@ -27,7 +20,6 @@
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
-    "node": "^13.8.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0"
   }
