@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"node ../bin/www\" \" ng serve\"",
-    "build": "ng build",
+    "start": "concurrently \"node ../bin/www\" \" ng build\"",
+    "build": "concurrently \"node ../bin/www\" \"ng build\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
