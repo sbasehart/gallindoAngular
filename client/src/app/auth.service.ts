@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-import { User } from '../../../models/User';
+import { User } from '../../../server/models/User';
 import { environment } from 'src/environments/environment';
 
 const apiUrl = environment.apiUrl + 'auth/';

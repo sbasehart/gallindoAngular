@@ -1,0 +1,7 @@
+ng build --prod --base-href "/gallindoAngular/"
+
+sudo ngh --dir dist/client
+
+api:23b70de1-990e-4046-905b-a537f01c51ac
+
+YrxykKtN8U4ilQ4F
