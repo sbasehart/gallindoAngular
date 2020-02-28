@@ -20,23 +20,6 @@ mongoose.connect("mongodb+srv://summerbasehart:YrxykKtN8U4ilQ4F@cluster0-2g4yp.m
 }).then(() =>  console.log('connection successful'))
   .catch((err) => console.error('connection failed', err));
 
-// mongoose.connect('mongodb://localhost/gallindoAngular', { 
-//     promiseLibrary: require('bluebird'), 
-//     useNewUrlParser: true, 
-//     useUnifiedTopology: true,
-//     useCreateIndex: true
-// }).then(() =>  console.log('connection successful'))
-//   .catch((err) => console.error(err));
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://summerbasehart:YrxykKtN8U4ilQ4F@cluster0-2g4yp.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true,  useUnifiedTopology: true, promiseLibrary: require('bluebird'), useNewUrlParser: true});
-// client.connect(err => {
-//   const database = client.db("gallindoAngular");
-//   console.log('connection successful'),  
-//   client.close();
-// })
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
