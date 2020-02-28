@@ -1,0 +1,16 @@
+<div class="dashboard" id="dashboard">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="row">
+    <a mat-flat-button [routerLink]="['add']">Add Category</a>
+  </div>
+  <hr>
+  <h3 class="text-center">Industries:</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-2 categories" *ngFor="let cat of data" [routerLink]="['details/', cat._id]">
+        <p><b>{{cat.catName}}</b></p>
+        <p> Updated: {{cat.updated | date: 'dd MMM yyyy'}}</p>
+    </div>
+  </div>
+</div>

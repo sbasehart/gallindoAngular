@@ -1,0 +1,160 @@
+.portfolio-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-width: 530px;
+  margin: auto auto 1rem;
+  .caption {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: fade-out($gray-900, 0.8);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    .caption-content {
+      color: $white;
+      margin: auto 2rem 2rem;
+      h2 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+      p {
+        font-weight: 300;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  @media(min-width: 992px) {
+    max-width: none;
+    margin: 0;
+    .caption {
+      -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+      -webkit-clip-path: inset(0px);
+      clip-path: inset(0px);
+      .caption-content {
+        transition: opacity 0.25s;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-bottom: 5rem;
+      }
+    }
+    img {
+      -webkit-transition: -webkit-clip-path 0.25s ease-out;
+      -webkit-clip-path: inset(-1px);
+      clip-path: inset(-1px);
+    }
+    &:hover {
+      img {
+        -webkit-clip-path: inset(2rem);
+        clip-path: inset(2rem);
+      }
+      .caption {
+        background-color: fade-out($primary, 0.1);
+        -webkit-clip-path: inset(2rem);
+        clip-path: inset(2rem);
+      }
+    }
+  }
+}
+
+// body{
+//   padding: 30px
+// }
+  
+// .news-events-page--list-page{
+//   text-align: center
+// }
+
+// @media (min-width: 768px) {
+//   .modal-dialog {
+//     width: 980px
+//   }
+// } 
+    
+// .customNavigation{
+//   a{
+//     position: absolute;
+//     top: 35;
+//     left: 0;
+//     right: auto;
+//     padding: 30px;
+//     float: left;
+//     font-size: 3em;
+//     cursor: pointer;
+//     z-index: 1
+//   }
+    
+//     &.next {
+//       left: auto;
+//       right: 0
+//     }
+      
+//     @media (min-width: 320px) {
+//       top: 20%}
+      
+//     @media (min-width: 480px) {
+//       top: 25%}
+      
+//     @media (min-width: 768px){
+//       top: 30%}
+    
+//     @media (min-width: 992px){
+//       top: 35%}
+//     }
+  
+// #sync1 {
+//   .item {
+//   background: #0c83e7;
+//   margin: 5px;
+//   color: #FFF;
+//   -webkit-border-radius: 3px;
+//   -moz-border-radius: 3px;
+//   border-radius: 3px;
+//   text-align: center;
+//   }
+// }
+
+// #sync2 {
+//   .owl-item {
+//     .item {
+//       background: #333;
+//       margin: 5px;
+//       color: #FFF;
+//       -webkit-border-radius: 3px;
+//       -moz-border-radius: 3px;
+//       border-radius: 3px;
+//       text-align: center;
+//       cursor: pointer;
+//       img{
+//         opacity: 0.5
+//       }
+//     }   
+//     &.synced {
+//       .item{
+//         img {
+//           opacity: 1
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .modal.in {
+//   .modal-dialog {
+//   border-radius: 0px
+//   }
+  
+//   .modal-content{
+//     border-radius: 0px
+//   }
+    
+//     .modal-header{
+//       border-radius: 0px;
+//       text-align: center
+//     }
+//   }
+    
+    
+

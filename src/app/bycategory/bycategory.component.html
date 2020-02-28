@@ -1,0 +1,25 @@
+<div class="videos container justify-content-center">
+  <nav class="container-fluid-nav text-center">
+    <a class="nav-link portfolio-link" *ngFor="let cat of data" routerLinkActive="active" [routerLink]="['/bycategory/', cat._id]"
+      [fragment]="'nav'">{{cat.catName}}</a>
+  </nav>
+
+  <div class="featured-works">
+    <h2>Featured Works</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let post of posts">
+          <div class="image-wrapper">
+            <span [innerHtml]="post.postDesc | sanitizeHtml"></span>
+          </div>
+          <h3>{{post.postTitle}}</h3>
+          <h4>{{post.postClient}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="text-center" style="margin-bottom: 3%">
+  <a class="btn btn-dark btn-xl" [routerLink]="['/home']" [fragment]="'portfolio'">Back to Portfolio</a>
+</div> -->

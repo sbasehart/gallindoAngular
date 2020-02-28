@@ -1,0 +1,31 @@
+<div class="dashboard" id="dashboard">
+    <div class="example-loading-shade" *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <a mat-flat-button [routerLink]="['/contact']">Return</a>
+      </div>
+    </div>
+    <div class="row contact">
+      <div class="col-md-3">
+        <p><b>{{contact.conName}}</b></p>
+        <p>{{contact.conEmail}}</p>
+        <p>{{contact.conPhone}}</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{contact.conAddress1}}</p>
+        <p>{{contact.conAddress2}}</p>
+      </div>
+      <div class="col-md-1">
+        <a class="btn btn-block" button (click)="deleteContact(contact.id)">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </div>
+      <div class="col-md-12">
+        <p>Message:</p>
+        <span [innerHtml]="contact.conMessage"></span>       
+      </div>
+
+    </div>
+  </div>

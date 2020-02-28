@@ -1,0 +1,46 @@
+/* Side Menu */
+
+ .mat-sidenav {
+  background-color: rgb(29, 128, 159) !important;
+  max-width:25%;
+  text-align:left;
+  position:fixed;
+  min-width:15%
+ }
+
+ ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-inline-start: 0;
+ }
+
+ a.nav-link{
+  color:white !important;
+  display: block;
+  padding: .5rem .5rem !important;
+ }
+
+ a.nav-link:hover {
+   font-style: italic;
+   font-weight: bold;
+   text-decoration: underline;;
+ }
+
+ .ng-sidebar--right {
+  top: 3em;
+}
+
+
+
+a.navbar-brand, a.navbar-brand:visited {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  border-bottom: 1px solid white;
+  color:white !important;
+}

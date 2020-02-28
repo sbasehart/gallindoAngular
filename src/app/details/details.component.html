@@ -1,0 +1,17 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <mat-card class="example-card" [routerLink]="['/details/', post.id]">
+    <mat-card-header>
+      <mat-card-title>{{post.postTitle}}</mat-card-title>
+      <p>Client: {{post.postClient}}</p>
+    </mat-card-header>
+    <span [innerHtml]="post.postDesc | sanitizeHtml"></span>       
+  </mat-card>
+</div>
+
+<div class="text-center" style="margin-bottom: 3%">
+  <a class="btn btn-dark btn-xl js-scroll-trigger" [routerLink]="['/bycategory']">Back to Portfolio</a>
+</div>

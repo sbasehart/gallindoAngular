@@ -1,0 +1,35 @@
+<div class="dashboard" id="dashboard">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/post']">
+      Back
+    </a>
+  </div>
+  <mat-card class="card">
+    <form [formGroup]="postForm" (ngSubmit)="onFormSubmit()">
+
+      <label for="category">Category : </label>
+      <select formControlName="category">
+        <option *ngFor="let cat of categories" [value]="cat._id">
+          {{cat.catName}}
+        <option>
+      </select>
+      <br>
+      <label for="postTitle">Job Title : </label>
+      <input matInput placeholder="Post Title" formControlName="postTitle" [errorStateMatcher]="matcher">
+      <br>
+      <label for="postClient">Client : </label>
+      <input matInput placeholder="Post Client" formControlName="postClient" [errorStateMatcher]="matcher">
+      <br>
+      <label for="postDesc">Image or Video Embed Code : <span class="whatsThis"><i class="fa fa-question-circle"></i></span></label>
+      <textarea placeholder="Paste Embed Code Here (available on youtube and instagram)" formControlName="postDesc" rows="6"></textarea>
+      <br>
+      <br>
+      <button type="submit" [disabled]="!postForm.valid" mat-flat-button color="primary">
+        Save
+      </button>
+    </form>
+  </mat-card>
+</div>
