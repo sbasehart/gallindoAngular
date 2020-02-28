@@ -132,8 +132,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundComponent,
-    data: { title: 'Not Found' }
+    component: HomeComponent,
+    data: { title: 'Home' }
   }
 ];
 
