@@ -32,7 +32,6 @@
     "ckeditor4-angular": "^1.0.1",
     "concurrently": "^5.1.0",
     "body-parser":"*",
-    "bcrypt": "^0.8.5",
     "express": "*",
     "hammerjs": "^2.0.8",
     "i": "^0.3.6",
