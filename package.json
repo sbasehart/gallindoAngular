@@ -1,11 +1,12 @@
 {
   "name": "gallindoangular",
   "version": "0.0.8",
+  "main": "bin/www",
   "scripts": {
     "ng": "ng",
     "start": "node bin/www",
     "serve": "nodemon",
-    "build": "ng build --output-path=../public",
+    "build": "ng build --output-path=public",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
