@@ -4,8 +4,8 @@ require('../config/passport')(passport);
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
-var Contact = require("../models/contact");
-const Post = require('../models/post');
+var Contact = require("../models/Contact");
+const Post = require('../models/Post');
 
 router.get('/', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);

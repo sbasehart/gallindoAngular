@@ -2,7 +2,7 @@ var passport = require('passport');
 require('../config/passport')(passport);
 var express = require('express');
 var router = express.Router();
-var Category = require("../models/category");
+var Category = require("../models/Category");
 
 router.get('/', passport.authenticate('jwt', { session: false}), function(req, res) {
     var token = getToken(req.headers);
