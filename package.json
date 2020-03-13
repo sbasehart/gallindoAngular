@@ -4,7 +4,7 @@
   "main": "bin/www",
   "scripts": {
     "ng": "ng",
-    "start": "node bin/www",
+    "start": "node bin/www && ng serve",
     "serve": "nodemon",
     "build": "ng build --prod",
     "test": "ng test",
@@ -15,7 +15,6 @@
   "dependencies": {
     "@angular/animations": "^8.2.14",
     "@angular/cdk": "~8.2.3",
-    "@angular/cli": "~8.3.23",
     "@angular/common": "^8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/compiler-cli": "~8.2.14",
@@ -31,7 +30,7 @@
     "bootstrap-scss": "^4.4.1",
     "ckeditor4-angular": "^1.0.1",
     "concurrently": "^5.1.0",
-    "body-parser":"*",
+    "body-parser": "*",
     "express": "*",
     "hammerjs": "^2.0.8",
     "i": "^0.3.6",
@@ -51,7 +50,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.23",
-    "@angular/cli": "~8.3.23",
+    "@angular/cli": "^8.3.25",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
