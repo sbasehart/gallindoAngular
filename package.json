@@ -4,7 +4,7 @@
   "main": "bin/www",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "start": "node bin/www",
     "serve": "nodemon",
     "build": "ng build --prod",
     "test": "ng test",
