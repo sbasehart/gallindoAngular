@@ -43,7 +43,7 @@
     "ngx-page-scroll-core": "^7.0.0",
     "ngx-print": "^1.2.0-beta.3",
     "ngx-toastr": "^11.3.3",
-    "npm": "^6.13.7",
+    "npm": "^6.14.6",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
