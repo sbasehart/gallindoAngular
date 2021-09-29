@@ -33,7 +33,7 @@
     "body-parser": "*",
     "express": "*",
     "hammerjs": "^2.0.8",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "jquery": "^3.4.1",
     "jwa": "^2.0.0",
     "mat-contenteditable": "^9.1.0",
